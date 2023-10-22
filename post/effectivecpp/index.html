@@ -13,11 +13,13 @@
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Effectivecpp"/>
-<meta name="twitter:description" content="luckfalcon的博客 C&#43;&#43;编程注意条款 拷贝构造函数 &mdash; 初始化 &mdash;&ndash;A(B)&mdash; 只发生在对象创建时 拷贝赋值运算符 &ndash; 同类型对象值赋值给创建对象 &ndash;A=B 值传递（pass-by-value）&ndash; 调用构造函数 引用传递 (passed-by-reference) &ndash; 不调用构造函数 C&#43;&#43;四大次级语言
+<meta name="twitter:description" content="luckfalcon的博客
+C&#43;&#43;编程注意条款 拷贝构造函数 &mdash; 初始化 &mdash;&ndash;A(B)&mdash; 只发生在对象创建时 拷贝赋值运算符 &ndash; 同类型对象值赋值给创建对象 &ndash;A=B 值传递（pass-by-value）&ndash; 调用构造函数 引用传递 (passed-by-reference) &ndash; 不调用构造函数 C&#43;&#43;四大次级语言
 c 语言部分编程 class 类编程 template 模板编程 STL 标准库编程 条款2：尽量以 const，enum，inline 替换 #define #define 没有作用域概念，且不做类型检查，仅仅是变量替换 (包括变量的前后缀，表达式代入)。 #define max(a,b) f((a) &gt; (b)? (a) : (b)) int a = 5,b = 0; max(&#43;&#43;a, b);	//a被累加2次 max(&#43;&#43;a, b&#43;10);	//a被累加1次 enum hack (枚举hack) 常用来初始化类内数组大小，是模板元编程的基础技术。 class Test {	static const int num = 1;//此处仅为声明而非定义 int arr[num]; }; const int num;//此处为定义,放在实现文件中而非头文件中 enum{num = 5}//可代替上 static const int class Test { private: enum {arr_size = 10};//在编译器不支持编译期间类内static初值时(仅限整数情况) static const int arr[arr_size]; }; 小结"/>
 
     <meta property="og:title" content="Effectivecpp" />
-<meta property="og:description" content="luckfalcon的博客 C&#43;&#43;编程注意条款 拷贝构造函数 &mdash; 初始化 &mdash;&ndash;A(B)&mdash; 只发生在对象创建时 拷贝赋值运算符 &ndash; 同类型对象值赋值给创建对象 &ndash;A=B 值传递（pass-by-value）&ndash; 调用构造函数 引用传递 (passed-by-reference) &ndash; 不调用构造函数 C&#43;&#43;四大次级语言
+<meta property="og:description" content="luckfalcon的博客
+C&#43;&#43;编程注意条款 拷贝构造函数 &mdash; 初始化 &mdash;&ndash;A(B)&mdash; 只发生在对象创建时 拷贝赋值运算符 &ndash; 同类型对象值赋值给创建对象 &ndash;A=B 值传递（pass-by-value）&ndash; 调用构造函数 引用传递 (passed-by-reference) &ndash; 不调用构造函数 C&#43;&#43;四大次级语言
 c 语言部分编程 class 类编程 template 模板编程 STL 标准库编程 条款2：尽量以 const，enum，inline 替换 #define #define 没有作用域概念，且不做类型检查，仅仅是变量替换 (包括变量的前后缀，表达式代入)。 #define max(a,b) f((a) &gt; (b)? (a) : (b)) int a = 5,b = 0; max(&#43;&#43;a, b);	//a被累加2次 max(&#43;&#43;a, b&#43;10);	//a被累加1次 enum hack (枚举hack) 常用来初始化类内数组大小，是模板元编程的基础技术。 class Test {	static const int num = 1;//此处仅为声明而非定义 int arr[num]; }; const int num;//此处为定义,放在实现文件中而非头文件中 enum{num = 5}//可代替上 static const int class Test { private: enum {arr_size = 10};//在编译器不支持编译期间类内static初值时(仅限整数情况) static const int arr[arr_size]; }; 小结" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://luckfalcon.github.io/post/effectivecpp/" /><meta property="article:section" content="post" />
@@ -55,8 +57,7 @@ c 语言部分编程 class 类编程 template 模板编程 STL 标准库编程 �
       </div>
     </header>
     <div class="post-content">
-      <p><a href="http://luckfalcon.github.io">luckfalcon的博客</a>
-<img src="D:%5CBlogFile%5Chugofile%5Cmyblog%5Ccontent%5Cpost%5Cfirst_page.png" alt="test"></p>
+      <p><a href="http://luckfalcon.github.io">luckfalcon的博客</a></p>
 <h1 id="c编程注意条款">C++编程注意条款</h1>
 <ul>
 <li>拷贝构造函数 &mdash; 初始化 &mdash;&ndash;A(B)&mdash; 只发生在对象创建时</li>
@@ -582,8 +583,8 @@ c 语言部分编程 class 类编程 template 模板编程 STL 标准库编程 �
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> fun1();
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fun2</span>();
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fun3</span>();
-</span></span><span style="display:flex;"><span>	}<span style="color:#960050;background-color:#1e0010">；</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> do_fun1(Obj <span style="color:#f92672">&amp;</span>oj){oj.fun1();}<span style="color:#75715e">//核心机能，包含客户都需要的non-member函数
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">do_fun1</span>(Obj <span style="color:#f92672">&amp;</span>oj){oj.fun1();}<span style="color:#75715e">//核心机能，包含客户都需要的non-member函数
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">do_fun3</span>(Obj <span style="color:#f92672">&amp;</span>oj){oj.fun3();}<span style="color:#75715e">//非成员函数可以进一步提高class的封装性
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//fun1_use.h//客户扩展头文件
@@ -699,9 +700,24 @@ c 语言部分编程 class 类编程 template 模板编程 STL 标准库编程 �
 <ul>
 <li>c++ 类型转换形式 :</li>
 </ul>
-<p>const_cast<!-- raw HTML omitted -->(expression)|dynamic_cast<!-- raw HTML omitted -->(expression)|reinterpret_cast<!-- raw HTML omitted -->(expression)|static_cast<!-- raw HTML omitted -->(expression)
-&mdash;-|
-const 到 non-const 转换|运行时，安全向下类型转换|执行低级转型|除去 const 到 non-const 的转换，其他一般类型转换</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">const_cast<!-- raw HTML omitted -->(expression)</th>
+<th style="text-align:center">dynamic_cast<!-- raw HTML omitted -->(expression)</th>
+<th style="text-align:center">reinterpret_cast<!-- raw HTML omitted -->(expression)</th>
+<th style="text-align:center">static_cast<!-- raw HTML omitted -->(expression)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">const 到 non-const 转换</td>
+<td style="text-align:center">运行时，安全向下类型转换</td>
+<td style="text-align:center">执行低级转型</td>
+<td style="text-align:center">除去 const 到 non-const 的转换，其他一般类型转换</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p><em><strong>小结</strong></em></p>
 </blockquote>
@@ -733,9 +749,22 @@ const 到 non-const 转换|运行时，安全向下类型转换|执行低级转�
 <ul>
 <li>异常安全函数提供三种不同级别保证：</li>
 </ul>
-<p>基本保证|强烈保证|不抛保证
-&mdash;-|
-异常抛出后，程序内所有事物保持有效状态，这些状态是未预知的|异常抛出后，程序状态不改变，回到被调用前状态|承诺不抛出异常，因其总能完成原有的功能。作用于内置类型所有操作应提供 nothrow 保证</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">基本保证</th>
+<th style="text-align:center">强烈保证</th>
+<th style="text-align:center">不抛保证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">异常抛出后，程序内所有事物保持有效状态，这些状态是未预知的</td>
+<td style="text-align:center">异常抛出后，程序状态不改变，回到被调用前状态</td>
+<td style="text-align:center">承诺不抛出异常，因其总能完成原有的功能。作用于内置类型所有操作应提供 nothrow 保证</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p><em><strong>小结</strong></em></p>
 </blockquote>
@@ -849,9 +878,22 @@ objects。</li>
 <ul>
 <li>声明 non-virtual 函数的目的是为了令 derived classes 继承函数的接口及一份强制性实现。</li>
 </ul>
-<p>pure virtual 函数|simple (impure) virtual 函数|non-virtual 函数
-&mdash;-|
-只继承接口|继承接口和一份缺省实现|继承接口和一份强制实现</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">pure virtual 函数</th>
+<th style="text-align:center">simple (impure) virtual 函数</th>
+<th style="text-align:center">non-virtual 函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">只继承接口</td>
+<td style="text-align:center">继承接口和一份缺省实现</td>
+<td style="text-align:center">继承接口和一份强制实现</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>&quot; 80 - 20 &quot; 法则：一个典型的程序有 80% 的执行时间花费在 20% 的代码身上。</li>
 </ul>
@@ -1161,11 +1203,33 @@ objects。</li>
 <li>STL 主要由 &quot; 用以表现容器、迭代器和算法 &quot; 的 templates 构成，以及若干工具性 templates。</li>
 <li>STL 共有 5 种迭代器分类</li>
 </ul>
-<p>Input 迭代器|Output 迭代器|Forward 迭代器|Bidirectional迭代器|Random access 迭代器
-&mdash;-|
-Istream_iterators|Ostream_iterators |不支持linked list|STL list, set, multiset, map, multimap 的迭代器|vector,deque, string 的迭代器
-|
-只能向前最多一次读操作|只能向前最多一次写操作|向前多次操作|可以向前移动，还可以向后移动|支持迭代器算术，双向</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Input 迭代器</th>
+<th style="text-align:center">Output 迭代器</th>
+<th style="text-align:center">Forward 迭代器</th>
+<th style="text-align:center">Bidirectional迭代器</th>
+<th style="text-align:center">Random access 迭代器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Istream_iterators</td>
+<td style="text-align:center">Ostream_iterators</td>
+<td style="text-align:center">不支持linked list</td>
+<td style="text-align:center">STL list, set, multiset, map, multimap 的迭代器</td>
+<td style="text-align:center">vector,deque, string 的迭代器</td>
+</tr>
+<tr>
+<td style="text-align:center">只能向前最多一次读操作</td>
+<td style="text-align:center">只能向前最多一次写操作</td>
+<td style="text-align:center">向前多次操作</td>
+<td style="text-align:center">可以向前移动，还可以向后移动</td>
+<td style="text-align:center">支持迭代器算术，双向</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>is-a关系：</p>
 <ul>
