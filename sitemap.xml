@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://luckfalcon.github.io/about/</loc>
-    <lastmod>2023-10-26T23:05:12+08:00</lastmod>
-  </url><url>
-    <loc>https://luckfalcon.github.io/post/markdown/</loc>
-    <lastmod>2023-10-26T19:49:47+08:00</lastmod>
-  </url><url>
-    <loc>https://luckfalcon.github.io/post/</loc>
-    <lastmod>2023-10-26T19:49:47+08:00</lastmod>
-  </url><url>
-    <loc>https://luckfalcon.github.io/</loc>
-    <lastmod>2023-10-26T19:49:47+08:00</lastmod>
-  </url><url>
-    <loc>https://luckfalcon.github.io/post/effectivecpp/</loc>
-    <lastmod>2023-10-23T01:47:59+08:00</lastmod>
-  </url><url>
-    <loc>https://luckfalcon.github.io/categories/</loc>
-  </url><url>
-    <loc>https://luckfalcon.github.io/tags/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>https://luckfalcon.github.io/en/sitemap.xml</loc>
+    
+      <lastmod>2023-10-31T18:22:56+08:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://luckfalcon.github.io/zh-cn/sitemap.xml</loc>
+    
+      <lastmod>2023-10-30T16:45:40+08:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>
