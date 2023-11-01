@@ -2,15 +2,6 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://luckfalcon.github.io/zh-cn/effectivecpp/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://luckfalcon.github.io/effectivecpp/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://luckfalcon.github.io/zh-cn/effectivecpp/"
-                    /></url><url>
             <loc>https://luckfalcon.github.io/zh-cn/basic-markdown-syntax/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -19,6 +10,15 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://luckfalcon.github.io/zh-cn/basic-markdown-syntax/"
+                    /></url><url>
+            <loc>https://luckfalcon.github.io/zh-cn/effectivecpp/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://luckfalcon.github.io/effectivecpp/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://luckfalcon.github.io/zh-cn/effectivecpp/"
                     /></url><url>
             <loc>https://luckfalcon.github.io/zh-cn/about/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
