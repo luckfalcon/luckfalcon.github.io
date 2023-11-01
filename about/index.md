@@ -4,7 +4,7 @@ Welcome to my blog！
 This is a blog recording learning programming technologies, whose details can be found in all documents. If readers aqcuire knowledge here, it's my pleasure！
 <center>
 
-![](/image/sky01.jpg)
+![](/images/sky01.jpg)
 
 </center>
 
