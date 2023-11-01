@@ -11,6 +11,15 @@
                     hreflang="en"
                     href="https://luckfalcon.github.io/basic-markdown-syntax/"
                     /></url><url>
+            <loc>https://luckfalcon.github.io/search-technology/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://luckfalcon.github.io/zh-cn/search-technology/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://luckfalcon.github.io/search-technology/"
+                    /></url><url>
             <loc>https://luckfalcon.github.io/effectivecpp/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -100,6 +109,24 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://luckfalcon.github.io/tags/"
+                    /></url><url>
+            <loc>https://luckfalcon.github.io/tags/search/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://luckfalcon.github.io/zh-cn/tags/search/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://luckfalcon.github.io/tags/search/"
+                    /></url><url>
+            <loc>https://luckfalcon.github.io/categories/search/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://luckfalcon.github.io/zh-cn/categories/search/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://luckfalcon.github.io/categories/search/"
                     /></url><url>
             <loc>https://luckfalcon.github.io/about/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
