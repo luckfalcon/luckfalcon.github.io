@@ -20,15 +20,6 @@
                     hreflang="zh-cn"
                     href="https://luckfalcon.github.io/zh-cn/effectivecpp/"
                     /></url><url>
-            <loc>https://luckfalcon.github.io/zh-cn/about/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://luckfalcon.github.io/about/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://luckfalcon.github.io/zh-cn/about/"
-                    /></url><url>
             <loc>https://luckfalcon.github.io/zh-cn/tags/c&#43;&#43;/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -109,6 +100,15 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://luckfalcon.github.io/zh-cn/tags/"
+                    /></url><url>
+            <loc>https://luckfalcon.github.io/zh-cn/about/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://luckfalcon.github.io/about/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://luckfalcon.github.io/zh-cn/about/"
                     /></url><url>
             <loc>https://luckfalcon.github.io/zh-cn/tags/installation/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://luckfalcon.github.io/zh-cn/tags/content/</loc><lastmod>2023-11-01T19:08:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
