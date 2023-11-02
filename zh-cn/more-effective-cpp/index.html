@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>More effective C&#43;&#43; 总结 - LuckFalcon</title><meta name="Description" content="more effective C&#43;&#43; 总结"><meta property="og:title" content="More effective C&#43;&#43; 总结" />
+<meta property="og:description" content="more effective C&#43;&#43; 总结" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckfalcon.github.io/zh-cn/more-effective-cpp/" /><meta property="og:image" content="https://luckfalcon.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-02T15:30:47+08:00" />
+<meta property="article:modified_time" content="2023-11-02T15:30:47+08:00" /><meta property="og:site_name" content="LuckFalcon" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://luckfalcon.github.io/logo.png"/>
+
+<meta name="twitter:title" content="More effective C&#43;&#43; 总结"/>
+<meta name="twitter:description" content="more effective C&#43;&#43; 总结"/>
+<meta name="application-name" content="LuckFalcon">
+<meta name="apple-mobile-web-app-title" content="LuckFalcon"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckfalcon.github.io/zh-cn/more-effective-cpp/" /><link rel="prev" href="https://luckfalcon.github.io/zh-cn/cppprimer5/" /><link rel="next" href="https://luckfalcon.github.io/zh-cn/search-technology/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "More effective C++ 总结",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckfalcon.github.io\/zh-cn\/more-effective-cpp\/"
+        },"image": ["https:\/\/luckfalcon.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "c\u002b\u002b, HTML","wordcount":  2073 ,
+        "url": "https:\/\/luckfalcon.github.io\/zh-cn\/more-effective-cpp\/","datePublished": "2023-11-02T15:30:47+08:00","dateModified": "2023-11-02T15:30:47+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/luckfalcon.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Luckfalcon"
+            },"description": "more effective C++ 总结"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="LuckFalcon"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LuckFalcon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/"> 所有文章 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/categories/"> 分类 </a><a class="menu-item" href="/zh-cn/categories/documentation/"> 文档 </a><a class="menu-item" href="/zh-cn/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/more-effective-cpp/">English</option><option value="/zh-cn/more-effective-cpp/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="LuckFalcon"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LuckFalcon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zh-cn/posts/" title="">所有文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a class="menu-item" href="/zh-cn/categories/documentation/" title="">文档</a><a class="menu-item" href="/zh-cn/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/more-effective-cpp/">English</option><option value="/zh-cn/more-effective-cpp/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">More effective C++ 总结</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://luckfalcon.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Luckfalcon</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/c++/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>C++</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-02">2023-11-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2073 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/zh-cn/more-effective-cpp/" class="leancloud_visitors" data-flag-title="More effective C&#43;&#43; 总结">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#条款1指针与引用的区别">条款1：指针与引用的区别</a></li>
+    <li><a href="#条款2尽量使用-c-风格的类型转换">条款2：尽量使用 C++ 风格的类型转换</a></li>
+    <li><a href="#条款3不要对数组使用多态">条款3：不要对数组使用多态</a></li>
+    <li><a href="#条款4避免无用的缺省构造函数">条款4：避免无用的缺省构造函数</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#条款5谨慎定义类型转换函数">条款5：谨慎定义类型转换函数</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="基础议题">基础议题</h1>
+<ul>
+<li>指针、引用、类型转换、数组、构造</li>
+</ul>
+<h2 id="条款1指针与引用的区别">条款1：指针与引用的区别</h2>
+<ul>
+<li>一个引用必须指向某个对象，任何情况下都不可以使用指向空值的引用。设计不允许变量为空时，可以把变量声明为引用。</li>
+<li>不存在指向空值的引用这个事实意味着使用引用的代码效率比使用指针的要高。因为在使用引用之前不需要测试它的合法性。</li>
+<li>指针可以被重新赋值以指向另一个不同的对象，引用则总是指向在初始化时被指定的对象，以后不能改变。</li>
+<li>使用指针的情况：</li>
+</ul>
+<blockquote>
+<ol>
+<li>考虑到存在不指向任何对象的可能 ( 在这种情况下，你能够设置指针为空 )。</li>
+<li>需要能够在不同的时刻指向不同的对象 ( 在这种情况下，你能改变指的指向 )。</li>
+</ol>
+</blockquote>
+<ul>
+<li>使用引用的情况：</li>
+</ul>
+<blockquote>
+<ol>
+<li>总是指向一个对象并且一旦指向一个对象后就不会改变指向，那么你应该使用引用。</li>
+<li>当你重载某个操作符时，你应该使用引用。如何操作符[ ]返回对象引用</li>
+</ol>
+</blockquote>
+<ul>
+<li><em><strong>总结</strong></em></li>
+</ul>
+<blockquote>
+<p>当你知道你必须指向一个对象并且不想改变其指向时, 或者在重载操作符并为防止不必要的语义误解时，你不应该使用指针。而在除此之外的其他情况下，则应使用指针。</p>
+</blockquote>
+<h2 id="条款2尽量使用-c-风格的类型转换">条款2：尽量使用 C++ 风格的类型转换</h2>
+<ul>
+<li>C++ 四种类型转换操作符：static_cast，const_cast，dynamic_cast，和 reinterpret_cast。</li>
+<li>使用格式：操作符&lt;要转换的类型&gt;(表达式)&ndash;&gt;表达式括号必需。</li>
+<li>reinterpret_cast 使用这个操作符的类型转换，其转换结果几乎都是执行期定义 （ implementation-defined ）。因此 ，使用reinterpret_casts 的代码很难移植。</li>
+<li><em><strong>总结</strong></em></li>
+</ul>
+<blockquote>
+<p>新的类型转换符缺乏美感才能使它弥补了在含义精确性和可辨认性上的缺点，使用新类型转换符的程序更容易被解析，它们允许编译器检测出原来不能发现的错误。</p>
+</blockquote>
+<ul>
+<li>
+<h2 id="条款3不要对数组使用多态">条款3：不要对数组使用多态</h2>
+</li>
+<li>通过一个基类指针来删除一个含有派生类对象的数组，结果将是不确定的。</li>
+<li>在基类内操作基类对象数组时的大小是确定的，而在使用基类指针操作派生类对象数组时则会因派生类对象大小发生改变，从而无法确定对象数组的大小。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Base</span><span class="p">{...}</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Derived</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Base</span><span class="p">{...}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">Base</span><span class="o">::</span><span class="n">printarry</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ostream</span> <span class="n">o</span><span class="p">,</span> <span class="n">Base</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">o</span><span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Base</span> <span class="n">b</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">printarry</span><span class="p">(</span><span class="n">cout</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span><span class="c1">// n 的值是正确的
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Derived</span> <span class="n">d</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">printarry</span><span class="p">(</span><span class="n">cout</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span><span class="c1">//因派生类对象大小发生改变，从而导致 n 的计算错误
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>多态和指针算法不能混合在一起来用，所以数组与多态也不能用在一起，因为数组调用的本质是调用指针。</li>
+<li>是如果你不从一个具体类（concrete classes），派生出另一个具体类，那么你就不太可能犯这种使用多态性数组的错误。</li>
+<li>
+<h2 id="条款4避免无用的缺省构造函数">条款4：避免无用的缺省构造函数</h2>
+</li>
+<li><strong>如果一个类没有缺省构造函数，则无法直接建立该类的对象数组，也不可以使用非堆数组 ( new 数组 )。</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Obj</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Obj</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span><span class="o">:</span><span class="n">num</span><span class="p">(</span><span class="n">n</span><span class="p">){}</span><span class="c1">//没用默认构造函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Obj</span> <span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="c1">//没有默认构造函数，无法直接建立数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Obj</span> <span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">Obj</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">Obj</span><span class="p">(</span><span class="mi">2</span><span class="p">)...};</span><span class="c1">//可行，不过数组大时不现实
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Obj</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Obj</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span> <span class="c1">//没有默认构造函数，无法建立堆数组
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>可以指针方式避免调用构造函数。这种方法有两个缺点，第一你必须删除数组里每个指针所指向的对象。如果你忘了，就会发生内存泄漏。第二增加了内存分配量，你需要空间来容纳指针。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="n">Obj</span><span class="o">*</span> <span class="n">objarr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">objarr</span> <span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="c1">//可行，没用调用构造函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">objarr</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">objarr</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="c1">//可行
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>为数组分配 raw memory ( 原始内存 )，可以避免浪费内存。使用 placement new 方法在内存中构造对象。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//operator new 函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="o">*</span><span class="n">rawmemery</span> <span class="o">=</span> <span class="k">operator</span> <span class="k">new</span><span class="p">(</span> <span class="mi">10</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Obj</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="n">Obj</span> <span class="o">*</span><span class="n">best</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">Obj</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">rawmemery</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//使用 placement new
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">  <span class="k">new</span><span class="p">(</span><span class="o">&amp;</span><span class="n">best</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="n">Obj</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>使用 placement new 的缺点：当你不想让它继续存在使用时，必须手动调用数组对象的析构函数，然后调用操作符 delete[ ] 来释放 raw memory。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">best</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="o">~</span><span class="n">Obj</span><span class="p">();</span><span class="c1">//析构对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">operator</span> <span class="k">delete</span><span class="p">[](</span><span class="n">rawmemery</span><span class="p">);</span><span class="c1">//回收内存
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>对于类里没有定义缺省构造函数所造成的第二个问题是它们无法在许多基于模板（template-based ）的容器类里使用。</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>在多数情况下，通过仔细设计模板可以杜绝对缺省构造函数的需求。</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>设计虚基类时所面临的要提供缺省构造函数还是不提供缺省构造函数</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>几乎所有的派生类在实例化时都必须给虚基类构造函数提供参数。</li>
+<li>这就要求所有由没有缺省构造函数的虚基类继承下来的派生类(无论有多远)都必须知道并理解提供给虚基类构造函数的参数的含义。</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>提供无意义的缺省构造函数也会影响类的工作效率。</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>如果成员函数必须测试所有的部分是否都被正确地初始化，那么这些函数的调用者就得为此付出更多的时间。</li>
+<li>使用这种（没有缺省构造函数的）类的确有一些限制，但是当你使用它时，它也给你提供了一种保证：你能相信这个类被正确地建立和高效地实现。</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<h1 id="运算符">运算符</h1>
+</li>
+<li>重载的运算符何时并且如何被调用，它们如何运作，它们应该如何彼此联系，以及如何获得这些方面的控制权。</li>
+<li>
+<h2 id="条款5谨慎定义类型转换函数">条款5：谨慎定义类型转换函数</h2>
+</li>
+<li>C++ 编译器能够在两种数据类型之间进行隐式转换（implicit conversions）。</li>
+<li>C++ 编译器会为内置数据类型之间进行自动的隐式转换。继承于 C 语言。</li>
+<li>自定义类型时，可以控制选择是否提供函数让编译器进行隐式类型转换。</li>
+<li>有两种函数允许编译器进行这些的转换：</li>
+</ul>
+<blockquote>
+<ul>
+<li>单参数构造函数（ single-argument constructors）。</li>
+<li>隐式类型转换运算符。</li>
+</ul>
+</blockquote></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-11-02</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/zh-cn/more-effective-cpp/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://luckfalcon.github.io/zh-cn/more-effective-cpp/" data-title="More effective C&#43;&#43; 总结" data-hashtags="c&#43;&#43;,HTML"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://luckfalcon.github.io/zh-cn/more-effective-cpp/" data-hashtag="c&#43;&#43;"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://luckfalcon.github.io/zh-cn/more-effective-cpp/" data-title="More effective C&#43;&#43; 总结"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://luckfalcon.github.io/zh-cn/more-effective-cpp/" data-title="More effective C&#43;&#43; 总结"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://luckfalcon.github.io/zh-cn/more-effective-cpp/" data-title="More effective C&#43;&#43; 总结" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/c&#43;&#43;/">C&#43;&#43;</a>,&nbsp;<a href="/zh-cn/tags/html/">HTML</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/cppprimer5/" class="prev" rel="prev" title="C&#43;&#43; primer总结"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>C++ primer总结</a>
+            <a href="/zh-cn/search-technology/" class="next" rel="next" title="搜索技术">搜索技术<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank">LuckFalcon</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

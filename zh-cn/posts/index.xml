@@ -3,7 +3,7 @@
         <title>所有文章 - LuckFalcon</title>
         <link>https://luckfalcon.github.io/zh-cn/posts/</link>
         <description>所有文章 | LuckFalcon</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 02 Nov 2023 15:30:47 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Markdown 基本语法</title>
     <link>https://luckfalcon.github.io/zh-cn/basic-markdown-syntax/</link>
     <pubDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</pubDate>
@@ -18,6 +18,22 @@
     <author>Luckfalcon</author>
     <guid>https://luckfalcon.github.io/zh-cn/search-technology/</guid>
     <description><![CDATA[搜索技术介绍]]></description>
+</item>
+<item>
+    <title>More effective C&#43;&#43; 总结</title>
+    <link>https://luckfalcon.github.io/zh-cn/more-effective-cpp/</link>
+    <pubDate>Thu, 02 Nov 2023 15:30:47 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/more-effective-cpp/</guid>
+    <description><![CDATA[more effective C++ 总结]]></description>
+</item>
+<item>
+    <title>C&#43;&#43; primer总结</title>
+    <link>https://luckfalcon.github.io/zh-cn/cppprimer5/</link>
+    <pubDate>Tue, 31 Oct 2023 21:49:29 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/cppprimer5/</guid>
+    <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Effective C&#43;&#43;</title>

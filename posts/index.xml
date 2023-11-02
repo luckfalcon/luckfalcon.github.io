@@ -3,7 +3,7 @@
         <title>All Posts - LuckFalcon</title>
         <link>https://luckfalcon.github.io/posts/</link>
         <description>All Posts | LuckFalcon</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 02 Nov 2023 15:30:35 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Basic Markdown Syntax</title>
     <link>https://luckfalcon.github.io/basic-markdown-syntax/</link>
     <pubDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</pubDate>
@@ -18,6 +18,22 @@
     <author>Luckfalcon</author>
     <guid>https://luckfalcon.github.io/search-technology/</guid>
     <description><![CDATA[A introduction of search technology]]></description>
+</item>
+<item>
+    <title>A sumary of more effective C&#43;&#43; </title>
+    <link>https://luckfalcon.github.io/more-effective-cpp/</link>
+    <pubDate>Thu, 02 Nov 2023 15:30:35 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/more-effective-cpp/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>cpp primer sumary</title>
+    <link>https://luckfalcon.github.io/cppprimer5/</link>
+    <pubDate>Tue, 31 Oct 2023 21:49:19 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/cppprimer5/</guid>
+    <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Effective C&#43;&#43;</title>
