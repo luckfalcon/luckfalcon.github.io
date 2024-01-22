@@ -46,7 +46,7 @@ mingw32-make.exe              #生成可执行文件
             }
         ],
         "preLaunchTask": "Build", #调试前预处理生产可执行文件
-        "miDebuggerPath": "/usr/bin/gdb"
+        "miDebuggerPath": "/usr/bin/gdb" #调试器运行路径
     }
     ]
 }
