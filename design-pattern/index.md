@@ -1,0 +1,5 @@
+# design pattern
+
+
+<!--more-->
+
