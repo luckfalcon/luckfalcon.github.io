@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/luckfalcon.github.io\/zh-cn\/design-pattern\/"
-        },"image": ["https:\/\/luckfalcon.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "design pattern, HTML","wordcount":  12716 ,
+        },"image": ["https:\/\/luckfalcon.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "design pattern, HTML","wordcount":  12710 ,
         "url": "https:\/\/luckfalcon.github.io\/zh-cn\/design-pattern\/","datePublished": "2024-02-21T05:14:21+08:00","dateModified": "2024-02-21T05:14:21+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/luckfalcon.github.io\/images\/avatar.png"},"author": {
@@ -108,7 +108,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">设计模式</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://luckfalcon.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Luckfalcon</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/design-pattern/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>design pattern</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-21">2024-02-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 12716 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-21">2024-02-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 12710 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 26 分钟&nbsp;<span id="/zh-cn/design-pattern/" class="leancloud_visitors" data-flag-title="设计模式">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#简单工厂模式">简单工厂模式</a></li>
+    <li><a href="#uml类图">UML类图</a></li>
     <li><a href="#策略模式">策略模式</a></li>
     <li><a href="#单一职责原则srp">单一职责原则(SRP)</a></li>
     <li><a href="#开放-封闭原则开-闭原则ocp">开放-封闭原则(开-闭原则，OCP)</a></li>
@@ -166,18 +166,19 @@
 灵活性好
 面向对象三大特性：封装、继承、多态降低程序的耦合度
 业务逻辑和界面逻辑分开降低两者间度耦合度</p>
-<h2 id="简单工厂模式">简单工厂模式</h2>
-<p>用一个单独的类来创造实例的过程，这个类就是简单工厂类。
-<strong>UML类图</strong>
-<img
+<h2 id="uml类图">UML类图</h2>
+<ul>
+<li>用一个单独的类来创造实例的过程，这个类就是简单工厂类。</li>
+</ul>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="/picture/UML.png"
         data-srcset="/picture/UML.png, /picture/UML.png 1.5x, /picture/UML.png 2x"
         data-sizes="auto"
         alt="/picture/UML.png"
-        title="UML类图" />
-UML类图是一种强大的工具，可用于可视化和传达软件系统的结构和关系。</p>
+        title="UML类图" /></p>
+<p>UML类图是一种强大的工具，可用于可视化和传达软件系统的结构和关系。</p>
 <ul>
 <li>类图分三层：</li>
 </ul>
@@ -223,8 +224,16 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 <li>依赖关系用虚线箭头表示。</li>
 </ol>
 <h2 id="策略模式">策略模式</h2>
-<p>它定义了一个算法家族，分别封装起来，让它们之间可以相互替换，此模式让算法的变化，不会影响到使用算法到用户。
-它允许在运行时选择算法的行为，而不是在编译时固定使用特定算法。该模式属于行为型设计模式，它通过将一组算法封装在可互换的策略对象中，以使算法的选择和使用与客户端代码解耦。
+<p>它定义了一个算法家族，分别封装起来，让它们之间可以相互替换，此模式让算法的变化，不会影响到使用算法到用户。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/picture/strategy.png"
+        data-srcset="/picture/strategy.png, /picture/strategy.png 1.5x, /picture/strategy.png 2x"
+        data-sizes="auto"
+        alt="/picture/strategy.png"
+        title="策略模式结构" /></p>
+<p>它允许在运行时选择算法的行为，而不是在编译时固定使用特定算法。该模式属于行为型设计模式，它通过将一组算法封装在可互换的策略对象中，以使算法的选择和使用与客户端代码解耦。
 <em><strong>策略模式到核心是实现算法的封装</strong></em></p>
 <h2 id="单一职责原则srp">单一职责原则(SRP)</h2>
 <ul>
