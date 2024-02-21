@@ -285,7 +285,7 @@ invoke:调用
 ## 职责链模式(Chain of Responsibility)
 **职责链模式(Chain of Responsibility)**：使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这个对象连成一条链，并沿着这条链传递请求，直到有一个对象处理它为止。
 
-![职责链模式结构](/picture/Chain-of-Responsibility.png)
+![职责链模式结构](/picture/chain-of-responsibility.png)
 
 - 职责链的好处
 >- 当客户提交一个请求时，请求是沿链传递直至有一个 ConcreteHandler 对象负责处理它。
