@@ -3,7 +3,7 @@
         <title>All Posts - LuckFalcon</title>
         <link>https://luckfalcon.github.io/posts/</link>
         <description>All Posts | LuckFalcon</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 21 Feb 2024 05:13:28 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 06 Mar 2024 21:41:17 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Basic Markdown Syntax</title>
     <link>https://luckfalcon.github.io/basic-markdown-syntax/</link>
     <pubDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</pubDate>
@@ -66,6 +66,14 @@ C++编程注意条款 拷贝构造函数与拷贝赋值运算符 拷贝构造函
     <pubDate>Wed, 21 Feb 2024 05:13:28 &#43;0800</pubDate>
     <author>Luckfalcon</author>
     <guid>https://luckfalcon.github.io/design-pattern/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Programmer Math</title>
+    <link>https://luckfalcon.github.io/progmmer-math/</link>
+    <pubDate>Wed, 06 Mar 2024 21:41:17 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/progmmer-math/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
