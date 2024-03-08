@@ -14,7 +14,8 @@
 - 用一个单独的类来创造实例的过程，这个类就是简单工厂类。
 
 <!-- ![UML类图](/picture/UML.png) -->
-![UML.png](https://vip.helloimg.com/i/2024/03/08/65eab75a11edc.png)
+![UML类图](UML.png "UML类图")
+<!-- ![UML.png](https://vip.helloimg.com/i/2024/03/08/65eab75a11edc.png) -->
 
 UML类图是一种强大的工具，可用于可视化和传达软件系统的结构和关系。
 - 类图分三层：
@@ -43,7 +44,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 它定义了一个算法家族，分别封装起来，让它们之间可以相互替换，此模式让算法的变化，不会影响到使用算法到用户。
 
 <!-- ![策略模式结构](/picture/strategy.png) -->
-![strategy.png](https://vip.helloimg.com/i/2024/03/08/65eab759ca9bf.png)
+![策略模式结构](strategy.png "策略模式结构")
+<!-- ![strategy.png](https://vip.helloimg.com/i/2024/03/08/65eab759ca9bf.png) -->
 
 它允许在运行时选择算法的行为，而不是在编译时固定使用特定算法。该模式属于行为型设计模式，它通过将一组算法封装在可互换的策略对象中，以使算法的选择和使用与客户端代码解耦。
 ***策略模式到核心是实现算法的封装***
@@ -76,7 +78,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 - **装饰模式(Decorator)**: 动态地给一个对象添加额外的职责，就增加功能来说，装饰模式比生成子类更灵活。
 
 <!-- ![装饰模式结构](/picture/decorator.png) -->
-![decorator.png](https://vip.helloimg.com/i/2024/03/08/65eabab0e4ed7.png)
+![装饰模式结构](decorator.png "装饰模式结构")
+<!-- ![decorator.png](https://vip.helloimg.com/i/2024/03/08/65eabab0e4ed7.png) -->
 
 - 装饰模式是利用 SetComponent 来对对象进行包装。
 - 每个装饰对象和如何使用这个对象分离，每个装饰对象只关心自己的功能，不需要关心如何添加到对象链当中。
@@ -90,7 +93,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 - **代理模式(Proxy)**，为其他对象提供一种代理以控制对这个对象的访问。
 
 <!-- ![代理模式结构图](picture/proxy.png) -->
-![proxy.png](https://vip.helloimg.com/i/2024/03/08/65eab759c7306.png)
+![代理模式结构](proxy.png "代理模式结构")
+<!-- ![proxy.png](https://vip.helloimg.com/i/2024/03/08/65eab759c7306.png) -->
 
 - 代理模式应用
 1. 远程代理
@@ -107,15 +111,17 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 简单工厂模式最大的优点在于工厂类中包含了必要的逻辑判断，根据客户端的选择条件动态实例化相关类，对于客户端来说，去除类与具体产品的依赖。
 - **工厂方法模式**: 定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。
 
-<!-- ![厂方法模式结构图](picture/factory-method.png) -->
-![factory-method.png](https://vip.helloimg.com/i/2024/03/08/65eabae23552d.png)
+<!-- ![工厂方法模式结构图](picture/factory-method.png) -->
+![工厂方法模式结构](factory-method.png "工厂方法模式结构")
+<!-- ![factory-method.png](https://vip.helloimg.com/i/2024/03/08/65eabae23552d.png) -->
 
 ## 原型模式
 - 原型模式(Prototype),用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
 **c++11新特性，协变返回类型**
 
 <!-- ![原型模式结构图](picture/prototype.png) -->
-![prototype.png](https://vip.helloimg.com/i/2024/03/08/65eab758b1619.png)
+![原型模式结构](prototype.png "原型模式结构")
+<!-- ![prototype.png](https://vip.helloimg.com/i/2024/03/08/65eab758b1619.png) -->
 
 ## 模板方法模式
 - 当我们要完成在某一细节层次一致一个过程或一系列步骤，但其个别步骤在更详细的层次上实现可能不同时，我们通常考虑使用模板方法模式处理。
@@ -123,7 +129,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 **模板方法模式**：定义一个操作中的算法骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法结构即可重新定义该算法到某些特定步骤。
 
 <!-- ![模板方法模式](/picture/template-method.png) -->
-![template-method.png](https://vip.helloimg.com/i/2024/03/08/65eab75b71325.png)
+![模板方法模式](template-method.png "模板方法模式")
+<!-- ![template-method.png](https://vip.helloimg.com/i/2024/03/08/65eab75b71325.png) -->
 
 ## 迪米特法则(LoD)
 
@@ -138,7 +145,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 **外观模式(Facade)**: 为子系统中的一组接口提供一个一致的界面，此模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。
 
 <!-- ![外观模式结构图](/picture/facade.png) -->
-![facade.png](https://vip.helloimg.com/i/2024/03/08/65eabab043a21.png)
+![外观模式结构](facade.png "外观模式结构")
+<!-- ![facade.png](https://vip.helloimg.com/i/2024/03/08/65eabab043a21.png) -->
 
 - 在设计初期阶段，应该要有意识的将不同的两个层分离，层与层之间建立外观 **Facade**。
 - 在开发阶段，子系统往往经过不断的重构演化而变得越来越复杂，增加外观 **Facade** 可以提供一个简单的接口，减少它们之间的依赖。
@@ -149,7 +157,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 **建造者模式(Builder)**: 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
 
 <!-- ![建造者模式结构](/picture/builder.png) -->
-![builder.png](https://vip.helloimg.com/i/2024/03/08/65eabbf43dfe1.png)
+![建造者模式结构](builder.png "建造者模式结构")
+<!-- ![builder.png](https://vip.helloimg.com/i/2024/03/08/65eabbf43dfe1.png) -->
 
 - 建造者模式用于创建一些复杂的对象，这些对象内部构建间的建造顺序通常是稳定的，但对象内部的构建通常面临着复杂变化。
 - 建造者模式，使得建造代码与表示代码分离，由于建造者隐藏了该产品是如何组装的，所以若要改变一个产品的内部表示，只需要再定义一个建造者即可。
@@ -160,7 +169,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 **观察者模式(Observer)**：定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。这个主题对象(抽象通知者)在状态发生变化时，会通知所有观察者对象，使它们能够自动更新自己。
 
 <!-- ![观察者模式结构](/picture/observer.png) -->
-![observer.png](https://vip.helloimg.com/i/2024/03/08/65eab75a02204.png)
+![观察者模式结构](observer.png "观察者模式结构")
+<!-- ![observer.png](https://vip.helloimg.com/i/2024/03/08/65eab75a02204.png) -->
 
 - 动机：
 > 将一个系统分割成一系列相互协作的类有一个很不好的副作用，那就是需要要维护相关对象的一致性。我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用带来不便。
@@ -182,7 +192,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 **抽象工厂方法(Abstract Factory)**：提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。
 
 <!-- ![抽象工厂方法结构](/picture/abstract-factory.png) -->
-![abstract-factory.png](https://vip.helloimg.com/i/2024/03/08/65eabbf4629f9.png)
+![抽象工厂方法结构](abstract-factory.png "抽象工厂方法结构")
+<!-- ![abstract-factory.png](https://vip.helloimg.com/i/2024/03/08/65eabbf4629f9.png) -->
 
 - 抽象工厂的优缺点
 
@@ -198,12 +209,14 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 - 编程方式：依赖注入(Dependency Injection)
 - 反射技术使用格式：Assembly.Load("程序集名称").CreateInstance("命名空间.类型名称")
 - 所有用简单工厂的地方，都可以考虑用反射技术来去除 switch 或 if，解除分支判断带来的耦合。
+
 ## 状态模式(State)
 **状态模式(State)**：当一个对象的内在状态改变时允许改变其行为，这个对象看起来像似改变了其类。
 - 状态模式主要**解决**的是当控制一个对象状态转换的条件表达式过于复杂时的情况。把状态的判断逻辑转移到表示不同状态的一系列类当中，可以把复杂的判断逻辑简化。
 
 <!-- ![状态模式结构](/picture/state.png) -->
-![state.png](https://vip.helloimg.com/i/2024/03/08/65eab759c6cf2.png)
+![状态模式结构](state.png "状态模式结构")
+<!-- ![state.png](https://vip.helloimg.com/i/2024/03/08/65eab759c6cf2.png) -->
 
 状态模式好处：
 > 将与特定状态相关的行为局部化，并且将不同状态的行为分割开来。
@@ -219,7 +232,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 > 类适配器：通过多重继承对一个接口与另一个接口进行匹配。**(C#、Java、VB.Net不支持多重继承,即它们要求一个类只有一个父类)**
 
 <!-- ![对象适配器结构](/picture/adapter.png) -->
-![adapter.png](https://vip.helloimg.com/i/2024/03/08/65eabbf43b1a7.png)
+![对象适配器结构](adapter.png "对象适配器结构")
+<!-- ![adapter.png](https://vip.helloimg.com/i/2024/03/08/65eabbf43b1a7.png) -->
 
 - 使用一个已经存在的类，但如果它的接口，也就是它的方法和你的要求不同时，应该考虑用适配器模式。
 - 两个类所做的事情相同或相似，但是具有不同的接口时要使用它。
@@ -229,7 +243,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 **备忘录模式(Memento)**：在不破坏封装性的前提下，捕捉一个对象的内部状态，并在该对象之外保存这个状态。这样就可以将该对象恢复到原先保存的状态。
 
 <!-- ![备忘录模式结构](/picture/memento.png) -->
-![memento.png](https://vip.helloimg.com/i/2024/03/08/65eab759c5b93.png)
+![备忘录模式结构](memento.png "备忘录模式结构")
+<!-- ![memento.png](https://vip.helloimg.com/i/2024/03/08/65eab759c5b93.png) -->
 
 - Memento 模式比较适用于功能比较复杂的，但需要维护或记录属性历史的类，需要保存的属性只是众多属性中的一小部分时，Originator 可以根据保存的 Memento 信息还原到前一状态。
 - 如果在某个系统中使用**命令模式**时，需要实现命令的撤销功能，那么命令模式可以使用备忘录模式来存储可撤销操作的状态。
@@ -239,7 +254,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 **组合模式(Composite)**：将对象组合成树形结构以表示"部分-整体"的层次结构。组合模式使得用户对单个对象和组合对象的使用具有一致性。
 
 <!-- ![组合模式结构](/picture/composite.png) -->
-![composite.png](https://vip.helloimg.com/i/2024/03/08/65eabab03dbb1.png)
+![组合模式结构](composite.png "组合模式结构")
+<!-- ![composite.png](https://vip.helloimg.com/i/2024/03/08/65eabab03dbb1.png) -->
 
 - 透明方式与安全方式
 > 透明方式：在 Component 中声明所有用来管理子对象的方法，其中包括 Remove,Add 等。这样实现的 Component 接口的所有子类都具备了 Add 和 Remove。这样做的好处就是叶节点和枝节点对于外界没有区别，它们具备完全一致的行为接口。缺点，Leaf 类本身不具备 Add 和 Remove 方法的功能，实现它没有意义。
@@ -256,7 +272,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 - 迭代器模式为遍历不同的聚集结构提供如开始、下一个、是否结束、当前哪一项等统一的接口。(c# Java等已经将该模式集成在语言内部了，**foreach 算法**)
 
 <!-- ![迭代器模式结构](/picture/iterator.png) -->
-![iterator.png](https://vip.helloimg.com/i/2024/03/08/65eabaaf2c421.png)
+![迭代器模式结构](iterator.png "迭代器模式结构")
+<!-- ![iterator.png](https://vip.helloimg.com/i/2024/03/08/65eabaaf2c421.png) -->
 
 - 迭代器模式就是分离了集合对象的遍历行为，抽象出一个迭代器类来负责，这样既可以做到不暴露集合内部结构，又可让外部代码透明的访问集合内部的数据。
 ## 单例模式(Singleton)
@@ -265,7 +282,8 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 - 通常我们可以让一个全局变量使得一个对象被访问，但它不能防止你实例化多个对象。一个最好的办法就是，让类自身负责保存它的唯一实例。这个类可以保证没有其他实例可以被创建，并且它可以提供一个访问该实例的方法。
 
 <!-- ![单例模式结构](/picture/singleton.png) -->
-![singleton.png](https://vip.helloimg.com/i/2024/03/08/65eab758aabd3.png)
+![单例模式结构](singleton.png "单例模式结构")
+<!-- ![singleton.png](https://vip.helloimg.com/i/2024/03/08/65eab758aabd3.png) -->
 
 - 单例模式因为 Singleton 封装它的唯一实例，这样它可以严格地控制客户怎样访问它以及何时访问它。简单地说就是对唯一实例的受控访问。
 - 多线程时的单例模式，通常会加进程锁 lock，lock 是确保当一个线程位于代码的临界区时，另一个线程不进入临界区。如果其他线程试图进入锁定的代码，则它将一直等待，直到对象被释放。
@@ -282,14 +300,16 @@ UML类图是一种强大的工具，可用于可视化和传达软件系统的�
 - 抽象与它的实现分离，不是让抽象类与其派生类分离，因为这没有意思。实现指的是抽象类和它的派生类用来实现自己的对象。
 
 <!-- ![桥接模式结构](/picture/bridge.png) -->
-![bridge.png](https://vip.helloimg.com/i/2024/03/08/65eabbf43fc2a.png)
+![桥接模式结构](bridge.png "桥接模式结构")
+<!-- ![bridge.png](https://vip.helloimg.com/i/2024/03/08/65eabbf43fc2a.png) -->
 
 - 实现系统可能有多角度分类，每一种分类都有可能变化，那么就把这种多角度分离出来让它们独立变化，减少它们之间的耦合。
 ## 命令模式(Command)
 **命令模式(Command)**：将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可撤销的操作。
 
 <!-- ![命令模式结构](/picture/command.png) -->
-![command.png](https://vip.helloimg.com/i/2024/03/08/65eabab038a35.png)
+![命令模式结构](command.png "命令模式结构")
+<!-- ![command.png](https://vip.helloimg.com/i/2024/03/08/65eabab038a35.png) -->
 
 invoke:调用
 
@@ -305,7 +325,8 @@ invoke:调用
 **职责链模式(Chain of Responsibility)**：使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这个对象连成一条链，并沿着这条链传递请求，直到有一个对象处理它为止。
 
 <!-- ![职责链模式结构](/picture/chain-of-responsibility.png) -->
-![chain-of-responsibility.png](https://vip.helloimg.com/i/2024/03/08/65eabab220252.png)
+![职责链模式结构](chain-of-responsibility.png "职责链模式结构")
+<!-- ![chain-of-responsibility.png](https://vip.helloimg.com/i/2024/03/08/65eabab220252.png) -->
 
 - 职责链的好处
 >- 当客户提交一个请求时，请求是沿链传递直至有一个 ConcreteHandler 对象负责处理它。
@@ -318,7 +339,8 @@ invoke:调用
 **中介者模式(Mediator)**：用一个中介对象来封装一系列的对象交互。中介者使对象不需要显式地相互引用，从而使其耦度松散，而且可以独立地改变它们之间的交互。中介者模式又叫调停者模式。
 
 <!-- ![中介者模式结构](/picture/mediator.png) -->
-![mediator.png](https://vip.helloimg.com/i/2024/03/08/65eabaaeb74d2.png)
+![中介者模式结构](mediator.png "中介者模式结构")
+<!-- ![mediator.png](https://vip.helloimg.com/i/2024/03/08/65eabaaeb74d2.png) -->
 
 - 中介者模式的优缺点
 - 优点
@@ -331,7 +353,8 @@ invoke:调用
 **享元模式(Flyweight)**：运用共享技术有效地支持大量细粒度的对象。
 
 <!-- ![享元模式结构](/picture/flyweight.png) -->
-![flyweight.png](https://vip.helloimg.com/i/2024/03/08/65eabab0cb41f.png)
+![享元模式结构](flyweight.png "享元模式结构")
+<!-- ![flyweight.png](https://vip.helloimg.com/i/2024/03/08/65eabab0cb41f.png) -->
 
 - 内部状态和外部状态
 > 内部状态：不会外部环境改变的共享部分
@@ -344,7 +367,8 @@ invoke:调用
 - 如果一个特定类型的问题的发生的频率足够高，那么可能就值得将该问题的各个实例表述为一个简单语言中的句子。这样就可以构建一个解释器，该解释器通过解释这些句子来解决问题。
 
 <!-- ![解释器模式结构](/picture/interpreter.png) -->
-![interpreter.png](https://vip.helloimg.com/i/2024/03/08/65eabab036237.png)
+![解释器模式结构](interpreter.png "解释器模式结构")
+<!-- ![interpreter.png](https://vip.helloimg.com/i/2024/03/08/65eabab036237.png) -->
 
 - 当一个语言需要解释执行，并且你可以将该语言中的句子表示为一个**抽象语法树**时，可使用解释器模式。
 - 解释器模式很容易地改变和扩展文法，因为该模式使用类来表示文法规则，你可使用继承来改变或扩展该文法。也比较容易容易实现文法，因为定义抽象语法树各个节点的类的实现大体相似，这些类都易于直接编写。
@@ -355,7 +379,8 @@ invoke:调用
 **访问者模式(Visitor)**：表示一个作用于某对象结构中的各个元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。
 
 <!-- ![访问者模式结构](/picture/visitor.png) -->
-![visitor.png](https://vip.helloimg.com/i/2024/03/08/65eab75a1d1d0.png)
+![访问者模式结构](visitor.png "访问者模式结构")
+<!-- ![visitor.png](https://vip.helloimg.com/i/2024/03/08/65eab75a1d1d0.png) -->
 
 - 访问者模式适合数据结构相对稳定的系统。它把数据结构和作用于数据结构的操作之间的耦合解脱开，使得操作集合可以相对自由地演化。
 - 访问者模式的**目的**是要把处理从数据结构中分离出来。有比较稳定的数据结构，又有易于变化的算法，使用访问者模式是比较适合的，因为访问者模式使得算法操作的增加变得容易。
