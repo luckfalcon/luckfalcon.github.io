@@ -170,14 +170,15 @@
 <ul>
 <li>用一个单独的类来创造实例的过程，这个类就是简单工厂类。</li>
 </ul>
+<!-- ![UML类图](/picture/UML.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/UML.png"
-        data-srcset="/picture/UML.png, /picture/UML.png 1.5x, /picture/UML.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eab75a11edc.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eab75a11edc.png, https://vip.helloimg.com/i/2024/03/08/65eab75a11edc.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eab75a11edc.png 2x"
         data-sizes="auto"
-        alt="/picture/UML.png"
-        title="UML类图" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eab75a11edc.png"
+        title="UML.png" /></p>
 <p>UML类图是一种强大的工具，可用于可视化和传达软件系统的结构和关系。</p>
 <ul>
 <li>类图分三层：</li>
@@ -225,14 +226,15 @@
 </ol>
 <h2 id="策略模式">策略模式</h2>
 <p>它定义了一个算法家族，分别封装起来，让它们之间可以相互替换，此模式让算法的变化，不会影响到使用算法到用户。</p>
+<!-- ![策略模式结构](/picture/strategy.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/strategy.png"
-        data-srcset="/picture/strategy.png, /picture/strategy.png 1.5x, /picture/strategy.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eab759ca9bf.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eab759ca9bf.png, https://vip.helloimg.com/i/2024/03/08/65eab759ca9bf.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eab759ca9bf.png 2x"
         data-sizes="auto"
-        alt="/picture/strategy.png"
-        title="策略模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eab759ca9bf.png"
+        title="strategy.png" /></p>
 <p>它允许在运行时选择算法的行为，而不是在编译时固定使用特定算法。该模式属于行为型设计模式，它通过将一组算法封装在可互换的策略对象中，以使算法的选择和使用与客户端代码解耦。
 <em><strong>策略模式到核心是实现算法的封装</strong></em></p>
 <h2 id="单一职责原则srp">单一职责原则(SRP)</h2>
@@ -278,14 +280,15 @@
 <ul>
 <li><strong>装饰模式(Decorator)</strong>: 动态地给一个对象添加额外的职责，就增加功能来说，装饰模式比生成子类更灵活。</li>
 </ul>
+<!-- ![装饰模式结构](/picture/decorator.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/decorator.png"
-        data-srcset="/picture/decorator.png, /picture/decorator.png 1.5x, /picture/decorator.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabab0e4ed7.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabab0e4ed7.png, https://vip.helloimg.com/i/2024/03/08/65eabab0e4ed7.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabab0e4ed7.png 2x"
         data-sizes="auto"
-        alt="/picture/decorator.png"
-        title="装饰模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabab0e4ed7.png"
+        title="decorator.png" /></p>
 <ul>
 <li>装饰模式是利用 SetComponent 来对对象进行包装。</li>
 <li>每个装饰对象和如何使用这个对象分离，每个装饰对象只关心自己的功能，不需要关心如何添加到对象链当中。</li>
@@ -306,14 +309,15 @@
 <ul>
 <li><strong>代理模式(Proxy)</strong>，为其他对象提供一种代理以控制对这个对象的访问。</li>
 </ul>
+<!-- ![代理模式结构图](picture/proxy.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="picture/proxy.png"
-        data-srcset="picture/proxy.png, picture/proxy.png 1.5x, picture/proxy.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eab759c7306.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eab759c7306.png, https://vip.helloimg.com/i/2024/03/08/65eab759c7306.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eab759c7306.png 2x"
         data-sizes="auto"
-        alt="picture/proxy.png"
-        title="代理模式结构图" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eab759c7306.png"
+        title="proxy.png" /></p>
 <ul>
 <li>代理模式应用</li>
 </ul>
@@ -336,40 +340,43 @@
 简单工厂模式最大的优点在于工厂类中包含了必要的逻辑判断，根据客户端的选择条件动态实例化相关类，对于客户端来说，去除类与具体产品的依赖。</li>
 <li><strong>工厂方法模式</strong>: 定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。</li>
 </ul>
+<!-- ![厂方法模式结构图](picture/factory-method.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="picture/factory-method.png"
-        data-srcset="picture/factory-method.png, picture/factory-method.png 1.5x, picture/factory-method.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabae23552d.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabae23552d.png, https://vip.helloimg.com/i/2024/03/08/65eabae23552d.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabae23552d.png 2x"
         data-sizes="auto"
-        alt="picture/factory-method.png"
-        title="厂方法模式结构图" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabae23552d.png"
+        title="factory-method.png" /></p>
 <h2 id="原型模式">原型模式</h2>
 <ul>
 <li>原型模式(Prototype),用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
 <strong>c++11新特性，协变返回类型</strong></li>
 </ul>
+<!-- ![原型模式结构图](picture/prototype.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="picture/prototype.png"
-        data-srcset="picture/prototype.png, picture/prototype.png 1.5x, picture/prototype.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eab758b1619.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eab758b1619.png, https://vip.helloimg.com/i/2024/03/08/65eab758b1619.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eab758b1619.png 2x"
         data-sizes="auto"
-        alt="picture/prototype.png"
-        title="原型模式结构图" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eab758b1619.png"
+        title="prototype.png" /></p>
 <h2 id="模板方法模式">模板方法模式</h2>
 <ul>
 <li>当我们要完成在某一细节层次一致一个过程或一系列步骤，但其个别步骤在更详细的层次上实现可能不同时，我们通常考虑使用模板方法模式处理。</li>
 </ul>
 <p><strong>模板方法模式</strong>：定义一个操作中的算法骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法结构即可重新定义该算法到某些特定步骤。</p>
+<!-- ![模板方法模式](/picture/template-method.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/template-method.png"
-        data-srcset="/picture/template-method.png, /picture/template-method.png 1.5x, /picture/template-method.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eab75b71325.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eab75b71325.png, https://vip.helloimg.com/i/2024/03/08/65eab75b71325.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eab75b71325.png 2x"
         data-sizes="auto"
-        alt="/picture/template-method.png"
-        title="模板方法模式" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eab75b71325.png"
+        title="template-method.png" /></p>
 <h2 id="迪米特法则lod">迪米特法则(LoD)</h2>
 <p>迪米特法则(LoD):</p>
 <blockquote>
@@ -382,14 +389,15 @@
 </ul>
 <h2 id="外观模式facade">外观模式(Facade)</h2>
 <p><strong>外观模式(Facade)</strong>: 为子系统中的一组接口提供一个一致的界面，此模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</p>
+<!-- ![外观模式结构图](/picture/facade.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/facade.png"
-        data-srcset="/picture/facade.png, /picture/facade.png 1.5x, /picture/facade.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabab043a21.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabab043a21.png, https://vip.helloimg.com/i/2024/03/08/65eabab043a21.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabab043a21.png 2x"
         data-sizes="auto"
-        alt="/picture/facade.png"
-        title="外观模式结构图" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabab043a21.png"
+        title="facade.png" /></p>
 <ul>
 <li>在设计初期阶段，应该要有意识的将不同的两个层分离，层与层之间建立外观 <strong>Facade</strong>。</li>
 <li>在开发阶段，子系统往往经过不断的重构演化而变得越来越复杂，增加外观 <strong>Facade</strong> 可以提供一个简单的接口，减少它们之间的依赖。</li>
@@ -398,14 +406,15 @@
 </ul>
 <h2 id="建造者模式builder">建造者模式(Builder)</h2>
 <p><strong>建造者模式(Builder)</strong>: 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</p>
+<!-- ![建造者模式结构](/picture/builder.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/builder.png"
-        data-srcset="/picture/builder.png, /picture/builder.png 1.5x, /picture/builder.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabbf43dfe1.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabbf43dfe1.png, https://vip.helloimg.com/i/2024/03/08/65eabbf43dfe1.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabbf43dfe1.png 2x"
         data-sizes="auto"
-        alt="/picture/builder.png"
-        title="建造者模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabbf43dfe1.png"
+        title="builder.png" /></p>
 <ul>
 <li>建造者模式用于创建一些复杂的对象，这些对象内部构建间的建造顺序通常是稳定的，但对象内部的构建通常面临着复杂变化。</li>
 <li>建造者模式，使得建造代码与表示代码分离，由于建造者隐藏了该产品是如何组装的，所以若要改变一个产品的内部表示，只需要再定义一个建造者即可。</li>
@@ -414,14 +423,15 @@
 <h2 id="观察者模式observer">观察者模式(Observer)</h2>
 <p><strong>观察者模式(Observer)</strong> 又叫 <strong>发布-订阅(Publish/Subscribe)模式</strong>。
 <strong>观察者模式(Observer)</strong>：定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。这个主题对象(抽象通知者)在状态发生变化时，会通知所有观察者对象，使它们能够自动更新自己。</p>
+<!-- ![观察者模式结构](/picture/observer.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/observer.png"
-        data-srcset="/picture/observer.png, /picture/observer.png 1.5x, /picture/observer.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eab75a02204.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eab75a02204.png, https://vip.helloimg.com/i/2024/03/08/65eab75a02204.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eab75a02204.png 2x"
         data-sizes="auto"
-        alt="/picture/observer.png"
-        title="观察者模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eab75a02204.png"
+        title="observer.png" /></p>
 <ul>
 <li>动机：</li>
 </ul>
@@ -450,14 +460,15 @@
 </ul>
 <h2 id="抽象工厂方法abstract-factory">抽象工厂方法(Abstract Factory)</h2>
 <p><strong>抽象工厂方法(Abstract Factory)</strong>：提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。</p>
+<!-- ![抽象工厂方法结构](/picture/abstract-factory.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/abstract-factory.png"
-        data-srcset="/picture/abstract-factory.png, /picture/abstract-factory.png 1.5x, /picture/abstract-factory.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabbf4629f9.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabbf4629f9.png, https://vip.helloimg.com/i/2024/03/08/65eabbf4629f9.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabbf4629f9.png 2x"
         data-sizes="auto"
-        alt="/picture/abstract-factory.png"
-        title="抽象工厂方法结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabbf4629f9.png"
+        title="abstract-factory.png" /></p>
 <ul>
 <li>抽象工厂的优缺点</li>
 </ul>
@@ -482,14 +493,15 @@
 <ul>
 <li>状态模式主要<strong>解决</strong>的是当控制一个对象状态转换的条件表达式过于复杂时的情况。把状态的判断逻辑转移到表示不同状态的一系列类当中，可以把复杂的判断逻辑简化。</li>
 </ul>
+<!-- ![状态模式结构](/picture/state.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/state.png"
-        data-srcset="/picture/state.png, /picture/state.png 1.5x, /picture/state.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eab759c6cf2.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eab759c6cf2.png, https://vip.helloimg.com/i/2024/03/08/65eab759c6cf2.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eab759c6cf2.png 2x"
         data-sizes="auto"
-        alt="/picture/state.png"
-        title="状态模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eab759c6cf2.png"
+        title="state.png" /></p>
 <p>状态模式好处：</p>
 <blockquote>
 <p>将与特定状态相关的行为局部化，并且将不同状态的行为分割开来。
@@ -507,14 +519,15 @@
 <blockquote>
 <p>类适配器：通过多重继承对一个接口与另一个接口进行匹配。<strong>(C#、Java、VB.Net不支持多重继承,即它们要求一个类只有一个父类)</strong></p>
 </blockquote>
+<!-- ![对象适配器结构](/picture/adapter.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/adapter.png"
-        data-srcset="/picture/adapter.png, /picture/adapter.png 1.5x, /picture/adapter.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabbf43b1a7.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabbf43b1a7.png, https://vip.helloimg.com/i/2024/03/08/65eabbf43b1a7.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabbf43b1a7.png 2x"
         data-sizes="auto"
-        alt="/picture/adapter.png"
-        title="对象适配器结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabbf43b1a7.png"
+        title="adapter.png" /></p>
 <ul>
 <li>使用一个已经存在的类，但如果它的接口，也就是它的方法和你的要求不同时，应该考虑用适配器模式。</li>
 <li>两个类所做的事情相同或相似，但是具有不同的接口时要使用它。</li>
@@ -523,14 +536,15 @@
 </ul>
 <h2 id="备忘录模式memento">备忘录模式(Memento)</h2>
 <p><strong>备忘录模式(Memento)</strong>：在不破坏封装性的前提下，捕捉一个对象的内部状态，并在该对象之外保存这个状态。这样就可以将该对象恢复到原先保存的状态。</p>
+<!-- ![备忘录模式结构](/picture/memento.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/memento.png"
-        data-srcset="/picture/memento.png, /picture/memento.png 1.5x, /picture/memento.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eab759c5b93.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eab759c5b93.png, https://vip.helloimg.com/i/2024/03/08/65eab759c5b93.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eab759c5b93.png 2x"
         data-sizes="auto"
-        alt="/picture/memento.png"
-        title="备忘录模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eab759c5b93.png"
+        title="memento.png" /></p>
 <ul>
 <li>Memento 模式比较适用于功能比较复杂的，但需要维护或记录属性历史的类，需要保存的属性只是众多属性中的一小部分时，Originator 可以根据保存的 Memento 信息还原到前一状态。</li>
 <li>如果在某个系统中使用<strong>命令模式</strong>时，需要实现命令的撤销功能，那么命令模式可以使用备忘录模式来存储可撤销操作的状态。</li>
@@ -539,14 +553,15 @@
 </ul>
 <h2 id="组合模式composite">组合模式(Composite)</h2>
 <p><strong>组合模式(Composite)</strong>：将对象组合成树形结构以表示&quot;部分-整体&quot;的层次结构。组合模式使得用户对单个对象和组合对象的使用具有一致性。</p>
+<!-- ![组合模式结构](/picture/composite.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/composite.png"
-        data-srcset="/picture/composite.png, /picture/composite.png 1.5x, /picture/composite.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabab03dbb1.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabab03dbb1.png, https://vip.helloimg.com/i/2024/03/08/65eabab03dbb1.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabab03dbb1.png 2x"
         data-sizes="auto"
-        alt="/picture/composite.png"
-        title="组合模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabab03dbb1.png"
+        title="composite.png" /></p>
 <ul>
 <li>透明方式与安全方式</li>
 </ul>
@@ -567,14 +582,15 @@
 <li>你需要对聚集有多种方式遍历时，可以考虑用迭代器模式。</li>
 <li>迭代器模式为遍历不同的聚集结构提供如开始、下一个、是否结束、当前哪一项等统一的接口。(c# Java等已经将该模式集成在语言内部了，<strong>foreach 算法</strong>)</li>
 </ul>
+<!-- ![迭代器模式结构](/picture/iterator.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/iterator.png"
-        data-srcset="/picture/iterator.png, /picture/iterator.png 1.5x, /picture/iterator.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabaaf2c421.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabaaf2c421.png, https://vip.helloimg.com/i/2024/03/08/65eabaaf2c421.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabaaf2c421.png 2x"
         data-sizes="auto"
-        alt="/picture/iterator.png"
-        title="迭代器模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabaaf2c421.png"
+        title="iterator.png" /></p>
 <ul>
 <li>迭代器模式就是分离了集合对象的遍历行为，抽象出一个迭代器类来负责，这样既可以做到不暴露集合内部结构，又可让外部代码透明的访问集合内部的数据。</li>
 </ul>
@@ -584,14 +600,15 @@
 <li>所有类都有构造方法，不编码则系统默认生成空的构造方法，若有显示定义的构造方法，默认构造方法就会消失。</li>
 <li>通常我们可以让一个全局变量使得一个对象被访问，但它不能防止你实例化多个对象。一个最好的办法就是，让类自身负责保存它的唯一实例。这个类可以保证没有其他实例可以被创建，并且它可以提供一个访问该实例的方法。</li>
 </ul>
+<!-- ![单例模式结构](/picture/singleton.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/singleton.png"
-        data-srcset="/picture/singleton.png, /picture/singleton.png 1.5x, /picture/singleton.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eab758aabd3.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eab758aabd3.png, https://vip.helloimg.com/i/2024/03/08/65eab758aabd3.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eab758aabd3.png 2x"
         data-sizes="auto"
-        alt="/picture/singleton.png"
-        title="单例模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eab758aabd3.png"
+        title="singleton.png" /></p>
 <ul>
 <li>单例模式因为 Singleton 封装它的唯一实例，这样它可以严格地控制客户怎样访问它以及何时访问它。简单地说就是对唯一实例的受控访问。</li>
 <li>多线程时的单例模式，通常会加进程锁 lock，lock 是确保当一个线程位于代码的临界区时，另一个线程不进入临界区。如果其他线程试图进入锁定的代码，则它将一直等待，直到对象被释放。</li>
@@ -611,27 +628,29 @@
 <ul>
 <li>抽象与它的实现分离，不是让抽象类与其派生类分离，因为这没有意思。实现指的是抽象类和它的派生类用来实现自己的对象。</li>
 </ul>
+<!-- ![桥接模式结构](/picture/bridge.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/bridge.png"
-        data-srcset="/picture/bridge.png, /picture/bridge.png 1.5x, /picture/bridge.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabbf43fc2a.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabbf43fc2a.png, https://vip.helloimg.com/i/2024/03/08/65eabbf43fc2a.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabbf43fc2a.png 2x"
         data-sizes="auto"
-        alt="/picture/bridge.png"
-        title="桥接模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabbf43fc2a.png"
+        title="bridge.png" /></p>
 <ul>
 <li>实现系统可能有多角度分类，每一种分类都有可能变化，那么就把这种多角度分离出来让它们独立变化，减少它们之间的耦合。</li>
 </ul>
 <h2 id="命令模式command">命令模式(Command)</h2>
 <p><strong>命令模式(Command)</strong>：将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可撤销的操作。</p>
+<!-- ![命令模式结构](/picture/command.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/command.png"
-        data-srcset="/picture/command.png, /picture/command.png 1.5x, /picture/command.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabab038a35.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabab038a35.png, https://vip.helloimg.com/i/2024/03/08/65eabab038a35.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabab038a35.png 2x"
         data-sizes="auto"
-        alt="/picture/command.png"
-        title="命令模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabab038a35.png"
+        title="command.png" /></p>
 <p>invoke:调用</p>
 <ul>
 <li>命令模式作用</li>
@@ -653,14 +672,15 @@
 </ul>
 <h2 id="职责链模式chain-of-responsibility">职责链模式(Chain of Responsibility)</h2>
 <p><strong>职责链模式(Chain of Responsibility)</strong>：使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这个对象连成一条链，并沿着这条链传递请求，直到有一个对象处理它为止。</p>
+<!-- ![职责链模式结构](/picture/chain-of-responsibility.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/chain-of-responsibility.png"
-        data-srcset="/picture/chain-of-responsibility.png, /picture/chain-of-responsibility.png 1.5x, /picture/chain-of-responsibility.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabab220252.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabab220252.png, https://vip.helloimg.com/i/2024/03/08/65eabab220252.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabab220252.png 2x"
         data-sizes="auto"
-        alt="/picture/chain-of-responsibility.png"
-        title="职责链模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabab220252.png"
+        title="chain-of-responsibility.png" /></p>
 <ul>
 <li>职责链的好处</li>
 </ul>
@@ -680,14 +700,15 @@
 <li>大量的连接使得一个对象不可能在没有其他对象的支持下工作，系统表现为一个不可分割的整体，所以，对系统的行为进行任何较大的改动就十分困难了。
 <strong>中介者模式(Mediator)</strong>：用一个中介对象来封装一系列的对象交互。中介者使对象不需要显式地相互引用，从而使其耦度松散，而且可以独立地改变它们之间的交互。中介者模式又叫调停者模式。</li>
 </ul>
+<!-- ![中介者模式结构](/picture/mediator.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/mediator.png"
-        data-srcset="/picture/mediator.png, /picture/mediator.png 1.5x, /picture/mediator.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabaaeb74d2.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabaaeb74d2.png, https://vip.helloimg.com/i/2024/03/08/65eabaaeb74d2.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabaaeb74d2.png 2x"
         data-sizes="auto"
-        alt="/picture/mediator.png"
-        title="中介者模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabaaeb74d2.png"
+        title="mediator.png" /></p>
 <ul>
 <li>中介者模式的优缺点</li>
 <li>优点</li>
@@ -711,14 +732,15 @@
 </ul>
 <h2 id="享元模式flyweight">享元模式(Flyweight)</h2>
 <p><strong>享元模式(Flyweight)</strong>：运用共享技术有效地支持大量细粒度的对象。</p>
+<!-- ![享元模式结构](/picture/flyweight.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/flyweight.png"
-        data-srcset="/picture/flyweight.png, /picture/flyweight.png 1.5x, /picture/flyweight.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabab0cb41f.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabab0cb41f.png, https://vip.helloimg.com/i/2024/03/08/65eabab0cb41f.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabab0cb41f.png 2x"
         data-sizes="auto"
-        alt="/picture/flyweight.png"
-        title="享元模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabab0cb41f.png"
+        title="flyweight.png" /></p>
 <ul>
 <li>内部状态和外部状态</li>
 </ul>
@@ -735,14 +757,15 @@
 <ul>
 <li>如果一个特定类型的问题的发生的频率足够高，那么可能就值得将该问题的各个实例表述为一个简单语言中的句子。这样就可以构建一个解释器，该解释器通过解释这些句子来解决问题。</li>
 </ul>
+<!-- ![解释器模式结构](/picture/interpreter.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/interpreter.png"
-        data-srcset="/picture/interpreter.png, /picture/interpreter.png 1.5x, /picture/interpreter.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eabab036237.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eabab036237.png, https://vip.helloimg.com/i/2024/03/08/65eabab036237.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eabab036237.png 2x"
         data-sizes="auto"
-        alt="/picture/interpreter.png"
-        title="解释器模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eabab036237.png"
+        title="interpreter.png" /></p>
 <ul>
 <li>当一个语言需要解释执行，并且你可以将该语言中的句子表示为一个<strong>抽象语法树</strong>时，可使用解释器模式。</li>
 <li>解释器模式很容易地改变和扩展文法，因为该模式使用类来表示文法规则，你可使用继承来改变或扩展该文法。也比较容易容易实现文法，因为定义抽象语法树各个节点的类的实现大体相似，这些类都易于直接编写。</li>
@@ -754,14 +777,15 @@
 <li><strong>双分派</strong>，意味着得到执行的操作取决于请求的种类和两个接收者的类型。
 <strong>访问者模式(Visitor)</strong>：表示一个作用于某对象结构中的各个元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。</li>
 </ul>
+<!-- ![访问者模式结构](/picture/visitor.png) -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="/picture/visitor.png"
-        data-srcset="/picture/visitor.png, /picture/visitor.png 1.5x, /picture/visitor.png 2x"
+        data-src="https://vip.helloimg.com/i/2024/03/08/65eab75a1d1d0.png"
+        data-srcset="https://vip.helloimg.com/i/2024/03/08/65eab75a1d1d0.png, https://vip.helloimg.com/i/2024/03/08/65eab75a1d1d0.png 1.5x, https://vip.helloimg.com/i/2024/03/08/65eab75a1d1d0.png 2x"
         data-sizes="auto"
-        alt="/picture/visitor.png"
-        title="访问者模式结构" /></p>
+        alt="https://vip.helloimg.com/i/2024/03/08/65eab75a1d1d0.png"
+        title="visitor.png" /></p>
 <ul>
 <li>访问者模式适合数据结构相对稳定的系统。它把数据结构和作用于数据结构的操作之间的耦合解脱开，使得操作集合可以相对自由地演化。</li>
 <li>访问者模式的<strong>目的</strong>是要把处理从数据结构中分离出来。有比较稳定的数据结构，又有易于变化的算法，使用访问者模式是比较适合的，因为访问者模式使得算法操作的增加变得容易。</li>
