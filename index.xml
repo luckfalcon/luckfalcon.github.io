@@ -3,7 +3,7 @@
         <title>LuckFalcon</title>
         <link>https://luckfalcon.github.io/</link>
         <description>Happy coding, happy life!</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 06 Mar 2024 21:41:17 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 22 Mar 2024 23:24:49 &#43;0800</lastBuildDate>
             <atom:link href="https://luckfalcon.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Basic Markdown Syntax</title>
@@ -76,6 +76,14 @@ C++编程注意条款 拷贝构造函数与拷贝赋值运算符 拷贝构造函
     <pubDate>Wed, 06 Mar 2024 21:41:17 &#43;0800</pubDate>
     <author>Luckfalcon</author>
     <guid>https://luckfalcon.github.io/progmmer-math/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>linux shell</title>
+    <link>https://luckfalcon.github.io/linux-shell/</link>
+    <pubDate>Fri, 22 Mar 2024 23:24:49 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/linux-shell/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
