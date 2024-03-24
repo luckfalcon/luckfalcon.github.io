@@ -4,14 +4,6 @@
         <link>https://luckfalcon.github.io/tags/</link>
         <description>Tags - Tag - LuckFalcon</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 22 Mar 2024 23:24:49 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>HTML</title>
-    <link>https://luckfalcon.github.io/tags/html/</link>
-    <pubDate>Fri, 22 Mar 2024 23:24:49 &#43;0800</pubDate>
-    <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/tags/html/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
     <title>linux</title>
     <link>https://luckfalcon.github.io/tags/linux/</link>
     <pubDate>Fri, 22 Mar 2024 23:24:49 &#43;0800</pubDate>
@@ -28,7 +20,15 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>programming math</title>
+    <title>Math</title>
+    <link>https://luckfalcon.github.io/tags/math/</link>
+    <pubDate>Wed, 06 Mar 2024 21:41:17 &#43;0800</pubDate>
+    <author>LuckFalcon</author>
+    <guid>https://luckfalcon.github.io/tags/math/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Programming Math</title>
     <link>https://luckfalcon.github.io/tags/programming-math/</link>
     <pubDate>Wed, 06 Mar 2024 21:41:17 &#43;0800</pubDate>
     <author>LuckFalcon</author>
@@ -36,7 +36,7 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>design pattern</title>
+    <title>Design Pattern</title>
     <link>https://luckfalcon.github.io/tags/design-pattern/</link>
     <pubDate>Wed, 21 Feb 2024 05:13:28 &#43;0800</pubDate>
     <author>LuckFalcon</author>
@@ -44,11 +44,19 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>vscode</title>
+    <title>Vscode Configuration</title>
     <link>https://luckfalcon.github.io/tags/vscode/</link>
     <pubDate>Mon, 22 Jan 2024 17:25:34 &#43;0800</pubDate>
     <author>LuckFalcon</author>
     <guid>https://luckfalcon.github.io/tags/vscode/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>cmake</title>
+    <link>https://luckfalcon.github.io/tags/cmake/</link>
+    <pubDate>Fri, 10 Nov 2023 23:16:35 &#43;0800</pubDate>
+    <author>LuckFalcon</author>
+    <guid>https://luckfalcon.github.io/tags/cmake/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -60,19 +68,19 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Markdown</title>
-    <link>https://luckfalcon.github.io/tags/markdown/</link>
-    <pubDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</pubDate>
+    <title>C&#43;&#43; Effective</title>
+    <link>https://luckfalcon.github.io/tags/effective/</link>
+    <pubDate>Thu, 02 Nov 2023 15:30:35 &#43;0800</pubDate>
     <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/tags/markdown/</guid>
+    <guid>https://luckfalcon.github.io/tags/effective/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>search</title>
-    <link>https://luckfalcon.github.io/tags/search/</link>
-    <pubDate>Tue, 31 Oct 2023 14:52:36 &#43;0800</pubDate>
+    <title>HTML</title>
+    <link>https://luckfalcon.github.io/tags/html/</link>
+    <pubDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</pubDate>
     <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/tags/search/</guid>
+    <guid>https://luckfalcon.github.io/tags/html/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

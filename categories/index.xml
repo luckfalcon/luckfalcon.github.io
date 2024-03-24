@@ -4,51 +4,11 @@
         <link>https://luckfalcon.github.io/categories/</link>
         <description>Categories - Category - LuckFalcon</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 22 Mar 2024 23:24:49 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/categories/" rel="self" type="application/rss+xml" /><item>
-    <title>linux</title>
-    <link>https://luckfalcon.github.io/categories/linux/</link>
-    <pubDate>Fri, 22 Mar 2024 23:24:49 &#43;0800</pubDate>
-    <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/categories/linux/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>shell</title>
-    <link>https://luckfalcon.github.io/categories/shell/</link>
-    <pubDate>Fri, 22 Mar 2024 23:24:49 &#43;0800</pubDate>
-    <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/categories/shell/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>math</title>
-    <link>https://luckfalcon.github.io/categories/math/</link>
-    <pubDate>Wed, 06 Mar 2024 21:41:17 &#43;0800</pubDate>
-    <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/categories/math/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>design pattern</title>
-    <link>https://luckfalcon.github.io/categories/design-pattern/</link>
-    <pubDate>Wed, 21 Feb 2024 05:13:28 &#43;0800</pubDate>
-    <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/categories/design-pattern/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>vscode</title>
-    <link>https://luckfalcon.github.io/categories/vscode/</link>
+    <title>software configuration</title>
+    <link>https://luckfalcon.github.io/categories/software/</link>
     <pubDate>Mon, 22 Jan 2024 17:25:34 &#43;0800</pubDate>
     <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/categories/vscode/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>C&#43;&#43;</title>
-    <link>https://luckfalcon.github.io/categories/c&#43;&#43;/</link>
-    <pubDate>Thu, 02 Nov 2023 15:30:35 &#43;0800</pubDate>
-    <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/categories/c&#43;&#43;/</guid>
+    <guid>https://luckfalcon.github.io/categories/software/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -60,11 +20,11 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>search</title>
-    <link>https://luckfalcon.github.io/categories/search/</link>
+    <title>Others</title>
+    <link>https://luckfalcon.github.io/categories/others/</link>
     <pubDate>Tue, 31 Oct 2023 14:52:36 &#43;0800</pubDate>
     <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/categories/search/</guid>
+    <guid>https://luckfalcon.github.io/categories/others/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>

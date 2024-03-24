@@ -35,7 +35,7 @@
     <pubDate>Tue, 31 Oct 2023 21:49:29 &#43;0800</pubDate>
     <author>Luckfalcon</author>
     <guid>https://luckfalcon.github.io/zh-cn/cppprimer5/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[<p>C++ primer 第五版</p>]]></description>
 </item>
 <item>
     <title>Effective C&#43;&#43;</title>
@@ -67,7 +67,7 @@
     <pubDate>Wed, 21 Feb 2024 05:14:21 &#43;0800</pubDate>
     <author>Luckfalcon</author>
     <guid>https://luckfalcon.github.io/zh-cn/design-pattern/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[<p>设计模式</p>]]></description>
 </item>
 <item>
     <title>程序员数学</title>
@@ -83,7 +83,7 @@
     <pubDate>Fri, 22 Mar 2024 23:24:59 &#43;0800</pubDate>
     <author>Luckfalcon</author>
     <guid>https://luckfalcon.github.io/zh-cn/linux-shell/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[<p>linux shell脚本攻略</p>]]></description>
 </item>
 </channel>
 </rss>

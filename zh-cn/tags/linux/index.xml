@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>linux - 标签 - LuckFalcon</title>
+        <link>https://luckfalcon.github.io/zh-cn/tags/linux/</link>
+        <description>linux - 标签 - LuckFalcon</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 22 Mar 2024 23:24:59 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/zh-cn/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>linux shell攻略</title>
+    <link>https://luckfalcon.github.io/zh-cn/linux-shell/</link>
+    <pubDate>Fri, 22 Mar 2024 23:24:59 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/linux-shell/</guid>
+    <description><![CDATA[<p>linux shell脚本攻略</p>]]></description>
+</item>
+</channel>
+</rss>

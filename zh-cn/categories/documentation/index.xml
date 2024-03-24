@@ -3,5 +3,61 @@
         <title>文档 - 分类 - LuckFalcon</title>
         <link>https://luckfalcon.github.io/zh-cn/categories/documentation/</link>
         <description>文档 - 分类 - LuckFalcon</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://luckfalcon.github.io/zh-cn/categories/documentation/" rel="self" type="application/rss+xml" /></channel>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://luckfalcon.github.io/zh-cn/categories/documentation/" rel="self" type="application/rss+xml" /><item>
+    <title>More effective C&#43;&#43; 总结</title>
+    <link>https://luckfalcon.github.io/zh-cn/more-effective-cpp/</link>
+    <pubDate>Thu, 02 Nov 2023 15:30:47 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/more-effective-cpp/</guid>
+    <description><![CDATA[more effective C++ 总结]]></description>
+</item>
+<item>
+    <title>C&#43;&#43; primer总结</title>
+    <link>https://luckfalcon.github.io/zh-cn/cppprimer5/</link>
+    <pubDate>Tue, 31 Oct 2023 21:49:29 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/cppprimer5/</guid>
+    <description><![CDATA[<p>C++ primer 第五版</p>]]></description>
+</item>
+<item>
+    <title>Effective C&#43;&#43;</title>
+    <link>https://luckfalcon.github.io/zh-cn/effective-cpp/</link>
+    <pubDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/effective-cpp/</guid>
+    <description><![CDATA[luckfalcon 的 github page C++编程注意条款 拷贝构造函数与拷贝赋值运算符 拷贝构造函数 : 初始化 &ndash;&gt; A(B) &ndash;&gt; 只发生在对象创建时 拷贝赋值运算符 : 同类型对象值赋值给创建对象]]></description>
+</item>
+<item>
+    <title>Cmake 总结</title>
+    <link>https://luckfalcon.github.io/zh-cn/cmake-sumary/</link>
+    <pubDate>Fri, 10 Nov 2023 23:16:50 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/cmake-sumary/</guid>
+    <description><![CDATA[cmake 总结]]></description>
+</item>
+<item>
+    <title>设计模式</title>
+    <link>https://luckfalcon.github.io/zh-cn/design-pattern/</link>
+    <pubDate>Wed, 21 Feb 2024 05:14:21 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/design-pattern/</guid>
+    <description><![CDATA[<p>设计模式</p>]]></description>
+</item>
+<item>
+    <title>程序员数学</title>
+    <link>https://luckfalcon.github.io/zh-cn/progmmer-math/</link>
+    <pubDate>Wed, 06 Mar 2024 21:41:29 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/progmmer-math/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>linux shell攻略</title>
+    <link>https://luckfalcon.github.io/zh-cn/linux-shell/</link>
+    <pubDate>Fri, 22 Mar 2024 23:24:59 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/linux-shell/</guid>
+    <description><![CDATA[<p>linux shell脚本攻略</p>]]></description>
+</item>
+</channel>
 </rss>

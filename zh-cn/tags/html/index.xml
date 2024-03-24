@@ -3,69 +3,13 @@
         <title>HTML - 标签 - LuckFalcon</title>
         <link>https://luckfalcon.github.io/zh-cn/tags/html/</link>
         <description>HTML - 标签 - LuckFalcon</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 06 Mar 2024 21:41:29 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/zh-cn/tags/html/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/zh-cn/tags/html/" rel="self" type="application/rss+xml" /><item>
     <title>Markdown 基本语法</title>
     <link>https://luckfalcon.github.io/zh-cn/basic-markdown-syntax/</link>
     <pubDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</pubDate>
     <author>Luckfalcon</author>
     <guid>https://luckfalcon.github.io/zh-cn/basic-markdown-syntax/</guid>
     <description><![CDATA[<p>这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例.</p>]]></description>
-</item>
-<item>
-    <title>搜索技术</title>
-    <link>https://luckfalcon.github.io/zh-cn/search-technology/</link>
-    <pubDate>Tue, 31 Oct 2023 14:52:50 &#43;0800</pubDate>
-    <author>Luckfalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/search-technology/</guid>
-    <description><![CDATA[搜索技术介绍]]></description>
-</item>
-<item>
-    <title>More effective C&#43;&#43; 总结</title>
-    <link>https://luckfalcon.github.io/zh-cn/more-effective-cpp/</link>
-    <pubDate>Thu, 02 Nov 2023 15:30:47 &#43;0800</pubDate>
-    <author>Luckfalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/more-effective-cpp/</guid>
-    <description><![CDATA[more effective C++ 总结]]></description>
-</item>
-<item>
-    <title>C&#43;&#43; primer总结</title>
-    <link>https://luckfalcon.github.io/zh-cn/cppprimer5/</link>
-    <pubDate>Tue, 31 Oct 2023 21:49:29 &#43;0800</pubDate>
-    <author>Luckfalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/cppprimer5/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Effective C&#43;&#43;</title>
-    <link>https://luckfalcon.github.io/zh-cn/effective-cpp/</link>
-    <pubDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</pubDate>
-    <author>Luckfalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/effective-cpp/</guid>
-    <description><![CDATA[luckfalcon 的 github page C++编程注意条款 拷贝构造函数与拷贝赋值运算符 拷贝构造函数 : 初始化 &ndash;&gt; A(B) &ndash;&gt; 只发生在对象创建时 拷贝赋值运算符 : 同类型对象值赋值给创建对象]]></description>
-</item>
-<item>
-    <title>Vscode运行配置</title>
-    <link>https://luckfalcon.github.io/zh-cn/vscode-config/</link>
-    <pubDate>Mon, 22 Jan 2024 17:25:19 &#43;0800</pubDate>
-    <author>Luckfalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/vscode-config/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>设计模式</title>
-    <link>https://luckfalcon.github.io/zh-cn/design-pattern/</link>
-    <pubDate>Wed, 21 Feb 2024 05:14:21 &#43;0800</pubDate>
-    <author>Luckfalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/design-pattern/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>程序员数学</title>
-    <link>https://luckfalcon.github.io/zh-cn/progmmer-math/</link>
-    <pubDate>Wed, 06 Mar 2024 21:41:29 &#43;0800</pubDate>
-    <author>Luckfalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/progmmer-math/</guid>
-    <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>

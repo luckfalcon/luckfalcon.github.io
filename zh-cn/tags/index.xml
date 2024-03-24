@@ -3,16 +3,24 @@
         <title>Tags - 标签 - LuckFalcon</title>
         <link>https://luckfalcon.github.io/zh-cn/tags/</link>
         <description>Tags - 标签 - LuckFalcon</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 06 Mar 2024 21:41:29 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/zh-cn/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>HTML</title>
-    <link>https://luckfalcon.github.io/zh-cn/tags/html/</link>
-    <pubDate>Wed, 06 Mar 2024 21:41:29 &#43;0800</pubDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 22 Mar 2024 23:24:59 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/zh-cn/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>linux</title>
+    <link>https://luckfalcon.github.io/zh-cn/tags/linux/</link>
+    <pubDate>Fri, 22 Mar 2024 23:24:59 &#43;0800</pubDate>
     <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/tags/html/</guid>
+    <guid>https://luckfalcon.github.io/zh-cn/tags/linux/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>programming math</title>
+    <title>shell</title>
+    <link>https://luckfalcon.github.io/zh-cn/tags/shell/</link>
+    <pubDate>Fri, 22 Mar 2024 23:24:59 &#43;0800</pubDate>
+    <author>LuckFalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/tags/shell/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>编程数学</title>
     <link>https://luckfalcon.github.io/zh-cn/tags/programming-math/</link>
     <pubDate>Wed, 06 Mar 2024 21:41:29 &#43;0800</pubDate>
     <author>LuckFalcon</author>
@@ -20,7 +28,15 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>design pattern</title>
+    <title>数学</title>
+    <link>https://luckfalcon.github.io/zh-cn/tags/math/</link>
+    <pubDate>Wed, 06 Mar 2024 21:41:29 &#43;0800</pubDate>
+    <author>LuckFalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/tags/math/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>设计模式</title>
     <link>https://luckfalcon.github.io/zh-cn/tags/design-pattern/</link>
     <pubDate>Wed, 21 Feb 2024 05:14:21 &#43;0800</pubDate>
     <author>LuckFalcon</author>
@@ -28,11 +44,19 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>vscode</title>
+    <title>Vscode 配置</title>
     <link>https://luckfalcon.github.io/zh-cn/tags/vscode/</link>
     <pubDate>Mon, 22 Jan 2024 17:25:19 &#43;0800</pubDate>
     <author>LuckFalcon</author>
     <guid>https://luckfalcon.github.io/zh-cn/tags/vscode/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>cmake</title>
+    <link>https://luckfalcon.github.io/zh-cn/tags/cmake/</link>
+    <pubDate>Fri, 10 Nov 2023 23:16:50 &#43;0800</pubDate>
+    <author>LuckFalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/tags/cmake/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
@@ -44,43 +68,19 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Markdown</title>
-    <link>https://luckfalcon.github.io/zh-cn/tags/markdown/</link>
+    <title>C&#43;&#43; 高效编程</title>
+    <link>https://luckfalcon.github.io/zh-cn/tags/effective/</link>
+    <pubDate>Thu, 02 Nov 2023 15:30:47 &#43;0800</pubDate>
+    <author>LuckFalcon</author>
+    <guid>https://luckfalcon.github.io/zh-cn/tags/effective/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>HTML</title>
+    <link>https://luckfalcon.github.io/zh-cn/tags/html/</link>
     <pubDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</pubDate>
     <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/tags/markdown/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>search</title>
-    <link>https://luckfalcon.github.io/zh-cn/tags/search/</link>
-    <pubDate>Tue, 31 Oct 2023 14:52:50 &#43;0800</pubDate>
-    <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/tags/search/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>安装</title>
-    <link>https://luckfalcon.github.io/zh-cn/tags/installation/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-    <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/tags/installation/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>内容</title>
-    <link>https://luckfalcon.github.io/zh-cn/tags/content/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-    <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/tags/content/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>配置</title>
-    <link>https://luckfalcon.github.io/zh-cn/tags/configuration/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-    <author>LuckFalcon</author>
-    <guid>https://luckfalcon.github.io/zh-cn/tags/configuration/</guid>
+    <guid>https://luckfalcon.github.io/zh-cn/tags/html/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
