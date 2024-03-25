@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/luckfalcon.github.io\/zh-cn\/linux-shell\/"
-        },"image": ["https:\/\/luckfalcon.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "shell, linux","wordcount":  9542 ,
+        },"image": ["https:\/\/luckfalcon.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "shell, linux","wordcount":  12198 ,
         "url": "https:\/\/luckfalcon.github.io\/zh-cn\/linux-shell\/","datePublished": "2024-03-22T23:24:59+08:00","dateModified": "2024-03-22T23:24:59+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/luckfalcon.github.io\/images\/avatar.png"},"author": {
@@ -108,8 +108,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">linux shell攻略</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://luckfalcon.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Luckfalcon</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/documentation/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>文档</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-22">2024-03-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 9542 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 20 分钟&nbsp;<span id="/zh-cn/linux-shell/" class="leancloud_visitors" data-flag-title="linux shell攻略">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-22">2024-03-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 12198 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 25 分钟&nbsp;<span id="/zh-cn/linux-shell/" class="leancloud_visitors" data-flag-title="linux shell攻略">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -134,6 +134,14 @@
         <li><a href="#将一个命令的输出发送给另一个命令">将一个命令的输出发送给另一个命令</a></li>
         <li><a href="#在不按下回车键的情况下读入-n-个字符">在不按下回车键的情况下读入 n 个字符</a></li>
         <li><a href="#持续运行命令直至执行成功">持续运行命令直至执行成功</a></li>
+        <li><a href="#字段分隔符与迭代器">字段分隔符与迭代器</a></li>
+        <li><a href="#比较与测试">比较与测试</a></li>
+        <li><a href="#使用配置文件定制-bash">使用配置文件定制 bash</a></li>
+      </ul>
+    </li>
+    <li><a href="#命令之乐">命令之乐</a>
+      <ul>
+        <li><a href="#用-cat-进行拼接">用 <code>cat</code> 进行拼接</a></li>
       </ul>
     </li>
   </ul>
@@ -1988,6 +1996,504 @@ shell 使用分号或换行符来分隔单个命令或命令序列。</p>
 </span></span><span class="line"><span class="cl"><span class="c1">#函数repeat()中包含了一个无限while循环,</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#该循环执行以函数参数形式(通过$@访问)传入的命令。</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#如果命令执行成功,则返回,进而退出循环。</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>一种更快的做法
+<code>true</code>是作为<code>/bin</code>中的一个二进制文件来实现的。这就意味着每执行一次之前提到的<code>while</code>循环,shell就不得不生成一个进程。为了避免这种情况,可以使用shell的内建命令<code>:</code>,该命令的退出状态总是为0:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">repeat<span class="o">()</span> <span class="o">{</span> <span class="k">while</span> :<span class="p">;</span> <span class="k">do</span> <span class="nv">$@</span> <span class="o">&amp;&amp;</span> <span class="k">return</span><span class="p">;</span> <span class="k">done</span> <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#尽管可读性不高,但是肯定比第一种方法快</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>加入延时</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">repeat<span class="o">()</span> <span class="o">{</span> <span class="k">while</span> :<span class="p">;</span> <span class="k">do</span> <span class="nv">$@</span> <span class="o">&amp;&amp;</span> <span class="k">return</span><span class="p">;</span> sleep 30<span class="p">;</span> <span class="k">done</span> <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#sleep 30秒</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="字段分隔符与迭代器">字段分隔符与迭代器</h3>
+<p>内部字段分隔符(Internal Field Separator,<strong>IFS</strong>)是shell脚本编程中的一个重要概念。在处理文本数据时,它的作用可不小。
+它是一个环境变量,其中保存了用于分隔的字符。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#CSV数据data</span>
+</span></span><span class="line"><span class="cl"><span class="nv">data</span><span class="o">=</span><span class="s2">&#34;name, gender,rollno,location&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">oldIFS</span><span class="o">=</span><span class="nv">$IFS</span>
+</span></span><span class="line"><span class="cl"><span class="nv">IFS</span><span class="o">=</span>, <span class="c1">#IFS现在被设置为,</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> item in <span class="nv">$data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Item: <span class="nv">$item</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl"><span class="nv">IFS</span><span class="o">=</span><span class="nv">$oldIFS</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>注意</strong>：<code>IFS</code>的默认值为空白字符(换行符、制表符或者空格)。
+以<code>/etc/passwd</code>为例,看看IFS的另一种用法。在文件<code>/etc/passwd</code>中,每一行包含了由冒号分隔的多个条目。该文件中的每行都对应着某个用户的相关属性。每行的最后一项指定了用户的默认shell。</p>
+<ul>
+<li>利用IFS打印出用户以及他们默认的shell：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">#用途: 演示IFS的用法</span>
+</span></span><span class="line"><span class="cl"><span class="nv">line</span><span class="o">=</span><span class="s2">&#34;root:x:0:0:root:/root:/bin/bash&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">oldIFS</span><span class="o">=</span><span class="nv">$IFS</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">IFS</span><span class="o">=</span><span class="s2">&#34;:&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">count</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> item in <span class="nv">$line</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> <span class="nv">$count</span> -eq <span class="m">0</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">user</span><span class="o">=</span><span class="nv">$item</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> <span class="nv">$count</span> -eq <span class="m">6</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nv">shell</span><span class="o">=</span><span class="nv">$item</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">let</span> count++
+</span></span><span class="line"><span class="cl"><span class="k">done</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">IFS</span><span class="o">=</span><span class="nv">$oldIFS</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#echo $user&#39;s shell is $shell;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># unexpected EOF while looking for matching `&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#syntax error: unexpected end of file</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$user</span><span class="s2">&#39;s shell is </span><span class="nv">$shell</span><span class="s2">&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>面向列表的for循环：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">for</span> var in list<span class="p">;</span> 
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">commands<span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">#使用变量$var</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>list可以是一个字符串,也可以是一个值序列。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="o">{</span>1..50<span class="o">}</span><span class="p">;</span>  <span class="c1">#生成一个从1~50的数字序列</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="o">{</span>a..z<span class="o">}</span> <span class="o">{</span>A..Z<span class="o">}</span><span class="p">;</span>  <span class="c1">#生成大小写字母序列</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>迭代指定范围的数字：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">for</span><span class="o">((</span><span class="nv">i</span><span class="o">=</span>0<span class="p">;</span>i&lt;10<span class="p">;</span>i++<span class="o">))</span> <span class="c1">#双层小括号()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">commands<span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">#使用变量$i</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>循环到条件满足为止：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">while</span> condition
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">commands<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>until</code>循环：
+在Bash中还可以使用一个特殊的循环<code>until</code>。它会一直循环，直到给定的条件为真。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">x</span><span class="o">=</span>0<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">until</span> <span class="o">[</span> <span class="nv">$x</span> -eq <span class="m">9</span> <span class="o">]</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">#条件是[$x -eq 9 ]</span>
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl"><span class="nb">let</span> x++<span class="p">;</span> <span class="nb">echo</span> <span class="nv">$x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="比较与测试">比较与测试</h3>
+<p>用<code>if、if else</code> 以及逻辑运算符来测试。还有一个 <code>test</code>命令也可以用于测试。</p>
+<ul>
+<li><code>if</code>条件：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> condition<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">then</span>
+</span></span><span class="line"><span class="cl">commands<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>else if</code>和<code>else</code>：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> condition<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">then</span>
+</span></span><span class="line"><span class="cl">commands<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="k">if</span> condition<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">commands<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">commands<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>if</code>的条件判断部分可能会变得很长，但可以用
+逻辑运算符将它变得简洁一些：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span> condition <span class="o">]</span> <span class="o">&amp;&amp;</span> action<span class="p">;</span>  <span class="c1"># 如果condition为真,则执行action</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> condition <span class="o">]</span> <span class="o">||</span> action<span class="p">;</span>  <span class="c1"># 如果condition为假,则执行action</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>算术比较</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span><span class="nv">$var</span> -eq <span class="m">0</span> <span class="o">]</span> or <span class="o">[</span> <span class="nv">$var</span> -eq 0<span class="o">]</span> <span class="c1">#注意在[或]与操作数之间有一个空格</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> <span class="nv">$var</span> -eq <span class="m">0</span> <span class="o">]</span>  <span class="c1">#当$var等于0时,返回真</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> <span class="nv">$var</span> -ne <span class="m">0</span> <span class="o">]</span>  <span class="c1">#当$var不为0时,返回真</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#-gt:大于</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#-lt:小于</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#-ge:大于或等于</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#-le:小于或等于</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> <span class="nv">$var1</span> -ne <span class="m">0</span> -a <span class="nv">$var2</span> -gt <span class="m">2</span> <span class="o">]</span>  <span class="c1">#使用逻辑与-a</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> <span class="nv">$var1</span> -ne <span class="m">0</span> -o <span class="nv">$var2</span> -gt <span class="m">2</span> <span class="o">]</span>  <span class="c1">#逻辑或-o</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>文件系统相关测试</li>
+</ul>
+<blockquote>
+<ul>
+<li><code>[ -f $file_var ]</code>：如果给定的变量包含正常的文件路径或文件名，则返回真。</li>
+<li><code>[ -x $var ]</code>：如果给定的变量包含的文件可执行，则返回真。</li>
+<li><code>[ -d $var ]</code>：如果给定的变量包含的是目录，则返回真。</li>
+<li><code>[ -e $var ]</code>：如果给定的变量包含的文件存在，则返回真。</li>
+<li><code>[ -c $var ]</code>：如果给定的变量包含的是一个字符设备文件的路径，则返回真。</li>
+<li><code>[ -b $var ]</code>：如果给定的变量包含的是一个块设备文件的路径，则返回真。</li>
+<li><code>[ -w $var ]</code>：如果给定的变量包含的文件可写，则返回真。</li>
+<li><code>[ -r $var ]</code>：如果给定的变量包含的文件可读，则返回真。</li>
+<li><code>[ -L $var ]</code>：如果给定的变量包含的是一个符号链接，则返回真。</li>
+</ul>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">fpath</span><span class="o">=</span><span class="s2">&#34;/etc/passwd&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -e <span class="nv">$fpath</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> File exists<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Does not exist<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>字符串比较
+进行字符串比较时,最好用双中括号，因为有时候采用单个中括号会产生错误。
+<strong>注意</strong>：双中括号是Bash的一个扩展特性。如果出于性能考虑，使用<code>ash</code>或<code>dash</code>来运行脚本,那么将无法使用该特性。</li>
+<li>常用字符比较:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#测试两个字符串是否相同</span>
+</span></span><span class="line"><span class="cl"><span class="o">[[</span> <span class="nv">$str1</span> <span class="o">=</span> <span class="nv">$str2</span> <span class="o">]]</span> <span class="c1">#当 str1等于str2时,返回真。也就是说,str1和 str2包含的文本是一模一样的。</span>
+</span></span><span class="line"><span class="cl"><span class="o">[[</span> <span class="nv">$str1</span> <span class="o">==</span> <span class="nv">$str2</span> <span class="o">]]</span> <span class="c1">#这是检查字符串是否相同的另一种写法。</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#测试两个字符串是否不同</span>
+</span></span><span class="line"><span class="cl"><span class="o">[[</span> <span class="nv">$str1</span> !<span class="o">=</span> <span class="nv">$str2</span> <span class="o">]]</span> <span class="c1">#如果str1和str2不相同,则返回真</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#找出在字母表中靠后的字符串</span>
+</span></span><span class="line"><span class="cl"> <span class="o">[[</span> <span class="nv">$str1</span> &gt; <span class="nv">$str2</span> <span class="o">]]</span> <span class="c1">#如果str1的字母序比str2大,则返回真。</span>
+</span></span><span class="line"><span class="cl"><span class="o">[[</span> <span class="nv">$str1</span> &lt; <span class="nv">$str2</span> <span class="o">]]</span> <span class="c1">#如果str1的字母序比str2小,则返回真。</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#测试空串</span>
+</span></span><span class="line"><span class="cl"><span class="o">[[</span> -z <span class="nv">$str1</span> <span class="o">]]</span> <span class="c1">#如果str1为空串,则返回真</span>
+</span></span><span class="line"><span class="cl"><span class="o">[[</span> -n <span class="nv">$str1</span> <span class="o">]]</span> <span class="c1">#如果str1不为空串,则返回真</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>使用逻辑运算符 <code>&amp;&amp;</code> 和 <code>||</code>组合多个条件：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> -n <span class="nv">$str1</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">[[</span> -z <span class="nv">$str2</span> <span class="o">]]</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">then</span>
+</span></span><span class="line"><span class="cl">commands<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>test</code>命令可以用来测试条件，用<code>test</code>可以避免使用过多的括号，增强代码的可读性：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$var</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;True&#34;</span><span class="p">;</span> <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#用test写法</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">test</span> <span class="nv">$var</span> -eq <span class="m">0</span> <span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&#34;True&#34;</span><span class="p">;</span> <span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>注意</strong>：<code>test</code>是一个外部程序,需要衍生出对应的进程，而 <code>[</code> 是Bash的一个内部函数，因此后者的执行效率更高。<code>test</code>兼容于Bourne shell、ash、dash等。</p>
+<h3 id="使用配置文件定制-bash">使用配置文件定制 bash</h3>
+<p>Linux和Unix中能够放置定制脚本的文件不止一个。这些配置文件分为3类:登录时执行的、启动交互式shell时执行的以及调用shell处理脚本文件时执行的。
+当用户登录shell时,会执行下列文件:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/etc/profile, 
+</span></span><span class="line"><span class="cl"><span class="nv">$HOME</span>/.profile,
+</span></span><span class="line"><span class="cl"> <span class="nv">$HOME</span>/.bash_login,
+</span></span><span class="line"><span class="cl">  <span class="nv">$HOME</span>/.bash_profile /
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>通过图形化登录管理器登入的不会执行<code>/etc/profile、 $HOME/.profile和$HOME/.bash_profile</code>这3个文件的。
+因为图形化窗口管理器并不会启动shell。当你打开终端窗口时才会创建shell，但这个shell也不是登录shell。
+如果<code>.bash_profile</code>或<code>.bash_login</code>文件存在,则不会去读取<code>.profile</code>文件。</p>
+<h2 id="命令之乐">命令之乐</h2>
+<p>实用的命令<code>grep、 awk 、 sed和find</code>。</p>
+<h3 id="用-cat-进行拼接">用 <code>cat</code> 进行拼接</h3>
+<p><code>cat</code>命令是一个经常会用到的简单命令，它本身表示conCATenate(拼接)。</p>
+<ul>
+<li><code>cat</code>读取文件内容的一般语法是：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat file1 file2 file3 ...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>该命令将作为命令行参数的文件内容拼接在一起并将结果发送到<code>stdout</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#打印单个文件的内容</span>
+</span></span><span class="line"><span class="cl">$ cat file.txt
+</span></span><span class="line"><span class="cl"><span class="c1">#打印多个文件的内容</span>
+</span></span><span class="line"><span class="cl">$ cat one.txt two.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>cat</code>命令不仅可以读取文件、拼接数据，还能够从标准输入中读取。</p>
+<ul>
+<li>管道操作符可以将数据作为<code>cat</code>命令的标准输入:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># OUTPUT_FROM_SOME COMMANDS | cat</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;hello&#34;</span> <span class="p">|</span> cat
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>cat</code>也可以将文件内容与终端输入拼接在一起。</p>
+<ul>
+<li>将<code>stdin</code>和另一个文件中的数据组合在一起：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s1">&#39;Text through stdin&#39;</span> <span class="p">|</span> cat - file.txt
+</span></span><span class="line"><span class="cl"><span class="c1"># - 被作为stdin文本的文件名</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>去掉多余的空白行：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat -s file.txt
+</span></span><span class="line"><span class="cl"><span class="c1">#将file中连续的空白行压缩为单行空白</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#可以用 tr 删除所有的空白行</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>将制表符显示为<code>^I</code>。
+对于Python而言，制表符和空格是区别对待的。
+<code>cat</code>有一个特性，可以将制表符识别出来。
+用<code>cat</code>命令的<code>-T</code>选项能够将制表符标记成 <code>^I</code>。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat file.py
+</span></span><span class="line"><span class="cl">def <span class="k">function</span><span class="o">()</span>:
+</span></span><span class="line"><span class="cl"><span class="nv">var</span> <span class="o">=</span> <span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="nv">next</span> <span class="o">=</span> <span class="m">6</span>
+</span></span><span class="line"><span class="cl"><span class="nv">third</span> <span class="o">=</span> <span class="m">7</span>
+</span></span><span class="line"><span class="cl">$ cat -T file.py
+</span></span><span class="line"><span class="cl">def <span class="k">function</span><span class="o">()</span>:
+</span></span><span class="line"><span class="cl">^Ivar <span class="o">=</span> <span class="m">5</span>
+</span></span><span class="line"><span class="cl">^I^Inext <span class="o">=</span> <span class="m">6</span>
+</span></span><span class="line"><span class="cl">^Ithird <span class="o">=</span> 7^I
 </span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">

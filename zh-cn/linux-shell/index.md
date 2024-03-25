@@ -864,6 +864,239 @@ done
 #函数repeat()中包含了一个无限while循环,
 #该循环执行以函数参数形式(通过$@访问)传入的命令。
 #如果命令执行成功,则返回,进而退出循环。
-
 ```
+- 一种更快的做法
+`true`是作为`/bin`中的一个二进制文件来实现的。这就意味着每执行一次之前提到的`while`循环,shell就不得不生成一个进程。为了避免这种情况,可以使用shell的内建命令`:`,该命令的退出状态总是为0:
+```bash
+repeat() { while :; do $@ && return; done }
+#尽管可读性不高,但是肯定比第一种方法快
+```
+- 加入延时
+```bash
+repeat() { while :; do $@ && return; sleep 30; done }
+#sleep 30秒
+```
+### 字段分隔符与迭代器
+内部字段分隔符(Internal Field Separator,**IFS**)是shell脚本编程中的一个重要概念。在处理文本数据时,它的作用可不小。
+它是一个环境变量,其中保存了用于分隔的字符。
+```bash
+#CSV数据data
+data="name, gender,rollno,location"
+oldIFS=$IFS
+IFS=, #IFS现在被设置为,
+for item in $data;
+do
+echo Item: $item
+done
+IFS=$oldIFS
+```
+**注意**：`IFS`的默认值为空白字符(换行符、制表符或者空格)。
+以`/etc/passwd`为例,看看IFS的另一种用法。在文件`/etc/passwd`中,每一行包含了由冒号分隔的多个条目。该文件中的每行都对应着某个用户的相关属性。每行的最后一项指定了用户的默认shell。
+- 利用IFS打印出用户以及他们默认的shell：
+```bash
+#!/bin/bash
+#用途: 演示IFS的用法
+line="root:x:0:0:root:/root:/bin/bash"
+oldIFS=$IFS;
+IFS=":"
+count=0
+for item in $line;
+do
+[ $count -eq 0 ] && user=$item;
+[ $count -eq 6 ] && shell=$item;
+let count++
+done;
+IFS=$oldIFS
+#echo $user's shell is $shell;
+# unexpected EOF while looking for matching `''
+#syntax error: unexpected end of file
+echo "$user's shell is $shell"
+```
+- 面向列表的for循环：
+```bash
+for var in list; 
+do
+commands;
+ #使用变量$var
+done
+```
+list可以是一个字符串,也可以是一个值序列。
+```bash
+echo {1..50};  #生成一个从1~50的数字序列
+echo {a..z} {A..Z};  #生成大小写字母序列
+```
+- 迭代指定范围的数字：
+```bash
+for((i=0;i<10;i++)) #双层小括号()
+{
+commands;
+ #使用变量$i
+}
+```
+- 循环到条件满足为止：
+```bash
+while condition
+do
+commands;
+done
+```
+- `until`循环：
+在Bash中还可以使用一个特殊的循环`until`。它会一直循环，直到给定的条件为真。
+```bash
+x=0;
+until [ $x -eq 9 ];
+ #条件是[$x -eq 9 ]
+do
+let x++; echo $x;
+done
+```
+###  比较与测试
+用`if、if else` 以及逻辑运算符来测试。还有一个 `test`命令也可以用于测试。
+- `if`条件：
+```bash
+if condition;
+then
+commands;
+fi
+```
+- `else if`和`else`：
+```bash
+if condition;
+then
+commands;
+else if condition; then
+commands;
+else
+commands;
+fi
+```
+- `if`的条件判断部分可能会变得很长，但可以用
+逻辑运算符将它变得简洁一些：
+```bash
+[ condition ] && action;  # 如果condition为真,则执行action
+[ condition ] || action;  # 如果condition为假,则执行action
+```
+- 算术比较
+```bash
+[$var -eq 0 ] or [ $var -eq 0] #注意在[或]与操作数之间有一个空格
+[ $var -eq 0 ]  #当$var等于0时,返回真
+[ $var -ne 0 ]  #当$var不为0时,返回真
+#-gt:大于
+#-lt:小于
+#-ge:大于或等于
+#-le:小于或等于
+[ $var1 -ne 0 -a $var2 -gt 2 ]  #使用逻辑与-a
+[ $var1 -ne 0 -o $var2 -gt 2 ]  #逻辑或-o
+```
+- 文件系统相关测试
+>-  `[ -f $file_var ]`：如果给定的变量包含正常的文件路径或文件名，则返回真。
+>- `[ -x $var ]`：如果给定的变量包含的文件可执行，则返回真。
+>- `[ -d $var ]`：如果给定的变量包含的是目录，则返回真。
+>- `[ -e $var ]`：如果给定的变量包含的文件存在，则返回真。
+>- `[ -c $var ]`：如果给定的变量包含的是一个字符设备文件的路径，则返回真。
+>- `[ -b $var ]`：如果给定的变量包含的是一个块设备文件的路径，则返回真。
+>- `[ -w $var ]`：如果给定的变量包含的文件可写，则返回真。
+>- `[ -r $var ]`：如果给定的变量包含的文件可读，则返回真。
+>- `[ -L $var ]`：如果给定的变量包含的是一个符号链接，则返回真。
 
+```bash
+fpath="/etc/passwd"
+if [ -e $fpath ]; then
+echo File exists;
+else
+echo Does not exist;
+fi
+```
+- 字符串比较
+进行字符串比较时,最好用双中括号，因为有时候采用单个中括号会产生错误。
+**注意**：双中括号是Bash的一个扩展特性。如果出于性能考虑，使用`ash`或`dash`来运行脚本,那么将无法使用该特性。
+- 常用字符比较:
+```bash
+#测试两个字符串是否相同
+[[ $str1 = $str2 ]] #当 str1等于str2时,返回真。也就是说,str1和 str2包含的文本是一模一样的。
+[[ $str1 == $str2 ]] #这是检查字符串是否相同的另一种写法。
+#测试两个字符串是否不同
+[[ $str1 != $str2 ]] #如果str1和str2不相同,则返回真
+#找出在字母表中靠后的字符串
+ [[ $str1 > $str2 ]] #如果str1的字母序比str2大,则返回真。
+[[ $str1 < $str2 ]] #如果str1的字母序比str2小,则返回真。
+#测试空串
+[[ -z $str1 ]] #如果str1为空串,则返回真
+[[ -n $str1 ]] #如果str1不为空串,则返回真
+```
+- 使用逻辑运算符 `&&` 和 `||`组合多个条件：
+```bash
+if [[ -n $str1 ]] && [[ -z $str2 ]] ;
+then
+commands;
+fi
+```
+- `test`命令可以用来测试条件，用`test`可以避免使用过多的括号，增强代码的可读性：
+```bash
+if [ $var -eq 0 ]; then echo "True"; fi
+#用test写法
+if test $var -eq 0 ; then echo "True"; fi
+```
+**注意**：`test`是一个外部程序,需要衍生出对应的进程，而 `[` 是Bash的一个内部函数，因此后者的执行效率更高。`test`兼容于Bourne shell、ash、dash等。
+###  使用配置文件定制 bash
+Linux和Unix中能够放置定制脚本的文件不止一个。这些配置文件分为3类:登录时执行的、启动交互式shell时执行的以及调用shell处理脚本文件时执行的。
+当用户登录shell时,会执行下列文件:
+```bash
+/etc/profile, 
+$HOME/.profile,
+ $HOME/.bash_login,
+  $HOME/.bash_profile /
+```
+通过图形化登录管理器登入的不会执行`/etc/profile、
+$HOME/.profile和$HOME/.bash_profile`这3个文件的。
+因为图形化窗口管理器并不会启动shell。当你打开终端窗口时才会创建shell，但这个shell也不是登录shell。
+如果`.bash_profile`或`.bash_login`文件存在,则不会去读取`.profile`文件。
+## 命令之乐
+实用的命令`grep、 awk 、 sed和find`。
+### 用 `cat` 进行拼接
+`cat`命令是一个经常会用到的简单命令，它本身表示conCATenate(拼接)。
+- `cat`读取文件内容的一般语法是：
+```bash
+cat file1 file2 file3 ...
+```
+该命令将作为命令行参数的文件内容拼接在一起并将结果发送到`stdout`。
+```bash
+#打印单个文件的内容
+$ cat file.txt
+#打印多个文件的内容
+$ cat one.txt two.txt
+```
+`cat`命令不仅可以读取文件、拼接数据，还能够从标准输入中读取。
+- 管道操作符可以将数据作为`cat`命令的标准输入:
+```bash
+# OUTPUT_FROM_SOME COMMANDS | cat
+echo "hello" | cat
+```
+`cat`也可以将文件内容与终端输入拼接在一起。
+- 将`stdin`和另一个文件中的数据组合在一起：
+```bash
+$ echo 'Text through stdin' | cat - file.txt
+# - 被作为stdin文本的文件名
+```
+- 去掉多余的空白行：
+```bash
+$ cat -s file.txt
+#将file中连续的空白行压缩为单行空白
+#可以用 tr 删除所有的空白行
+```
+- 将制表符显示为`^I`。
+对于Python而言，制表符和空格是区别对待的。
+`cat`有一个特性，可以将制表符识别出来。
+用`cat`命令的`-T`选项能够将制表符标记成 `^I`。
+```bash
+$ cat file.py
+def function():
+var = 5
+next = 6
+third = 7
+$ cat -T file.py
+def function():
+^Ivar = 5
+^I^Inext = 6
+^Ithird = 7^I
+```
