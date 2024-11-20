@@ -132,6 +132,10 @@
         <a href="/search-technology/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/search/">Search Technology</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/linux-command-line-and-shell-script-programming/">Index</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://luckfalcon.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Luckfalcon</a></span>&nbsp;<span class="post-publish">published on <time datetime="2024-05-07">2024-05-07</time></span></div><div class="content"></div><div class="post-footer">
+        <a href="/linux-command-line-and-shell-script-programming/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/more-effective-cpp/">A sumary of more effective C++ </a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://luckfalcon.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Luckfalcon</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-11-02">2023-11-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Documentation</a></span></div><div class="content"></div><div class="post-footer">
         <a href="/more-effective-cpp/">Read More</a><div class="post-tags">
@@ -147,11 +151,6 @@
 C++编程注意条款 拷贝构造函数与拷贝赋值运算符 拷贝构造函数 : 初始化 &ndash;&gt; A(B) &ndash;&gt; 只发生在对象创建时 拷贝赋值运算符 : 同类型对象值赋值给创建对象 &ndash;&gt; A=B 值传递与引用传递 值传递 ( pass-by-value ) : 调用构造函数 引用传递 (passed-by-reference) : 不调用构造函数 C++ 包含四大次级语言 c 语言部分编程 、class 类编程、template 模板编程、STL 标准库编程。 条款2：尽量以 const，enum，inline 替换 #define #define 没有作用域概念，且不做类型检查，仅仅是变量替换 (包括变量的前后缀，表达式代入)。 1 2 3 4 #define max(a,b) f((a) &gt; (b)? (a) : (b)) int a = 5,b = 0; max(++a, b);	//a被累加2次 max(++a, b+10);	//a被累加1次 enum hack (枚举hack) 常用来初始化类内数组大小，是模板元编程的基础技术。 1 2 3 4 5 6 7 8 class Test {	static const int num = 1;//此处仅为声明而非定义 int arr[num]; }; const int num;//此处为定义,放在实现文件中而非头文件中 enum{num = 5}//可代替上 static const int 1 2 3 4 5 6 class Test { private: enum {arr_size = 10};//在编译器不支持编译期间类内static初值时(仅限整数情况) static const int arr[arr_size]; }; 小结</div><div class="post-footer">
         <a href="/effective-cpp/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/c&#43;&#43;/">C&#43;&#43;</a>,&nbsp;<a href="/tags/effective/">C&#43;&#43; Effective</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/cmake-sumary/">A sumary of cmake</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://luckfalcon.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Luckfalcon</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-11-10">2023-11-10</time></span>&nbsp;<span class="post-category">included in <a href="/categories/documentation/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Documentation</a></span></div><div class="content">A sumary of cmake</div><div class="post-footer">
-        <a href="/cmake-sumary/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/cmake/">cmake</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>
