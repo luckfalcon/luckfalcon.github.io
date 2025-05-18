@@ -3,7 +3,15 @@
         <title>Categories - Category - LuckFalcon</title>
         <link>https://luckfalcon.github.io/categories/</link>
         <description>Categories - Category - LuckFalcon</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 22 Jan 2024 17:25:34 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 18 May 2025 10:52:00 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Go</title>
+    <link>https://luckfalcon.github.io/categories/go/</link>
+    <pubDate>Sun, 18 May 2025 10:52:00 &#43;0800</pubDate>
+    <author>LuckFalcon</author>
+    <guid>https://luckfalcon.github.io/categories/go/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>vscode</title>
     <link>https://luckfalcon.github.io/categories/vscode/</link>
     <pubDate>Mon, 22 Jan 2024 17:25:34 &#43;0800</pubDate>

@@ -65,7 +65,16 @@
                     hreflang="zh-cn"
                     href="https://luckfalcon.github.io/zh-cn/vscode-config/"
                     /></url><url>
-            <loc>https://luckfalcon.github.io/zh-cn/categories/</loc><lastmod>2024-01-22T17:25:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://luckfalcon.github.io/zh-cn/go-language/</loc><lastmod>2025-05-18T10:52:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://luckfalcon.github.io/go-language/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://luckfalcon.github.io/zh-cn/go-language/"
+                    /></url><url>
+            <loc>https://luckfalcon.github.io/zh-cn/categories/</loc><lastmod>2025-05-18T10:52:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://luckfalcon.github.io/categories/"
@@ -74,7 +83,25 @@
                     hreflang="zh-cn"
                     href="https://luckfalcon.github.io/zh-cn/categories/"
                     /></url><url>
-            <loc>https://luckfalcon.github.io/zh-cn/tags/html/</loc><lastmod>2024-01-22T17:25:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://luckfalcon.github.io/zh-cn/tags/go/</loc><lastmod>2025-05-18T10:52:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://luckfalcon.github.io/tags/go/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://luckfalcon.github.io/zh-cn/tags/go/"
+                    /></url><url>
+            <loc>https://luckfalcon.github.io/zh-cn/categories/go/</loc><lastmod>2025-05-18T10:52:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://luckfalcon.github.io/categories/go/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://luckfalcon.github.io/zh-cn/categories/go/"
+                    /></url><url>
+            <loc>https://luckfalcon.github.io/zh-cn/tags/html/</loc><lastmod>2025-05-18T10:52:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://luckfalcon.github.io/tags/html/"
@@ -83,7 +110,7 @@
                     hreflang="zh-cn"
                     href="https://luckfalcon.github.io/zh-cn/tags/html/"
                     /></url><url>
-            <loc>https://luckfalcon.github.io/zh-cn/</loc><lastmod>2024-01-22T17:25:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://luckfalcon.github.io/zh-cn/</loc><lastmod>2025-05-18T10:52:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://luckfalcon.github.io/"
@@ -92,7 +119,7 @@
                     hreflang="zh-cn"
                     href="https://luckfalcon.github.io/zh-cn/"
                     /></url><url>
-            <loc>https://luckfalcon.github.io/zh-cn/posts/</loc><lastmod>2024-01-22T17:25:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://luckfalcon.github.io/zh-cn/posts/</loc><lastmod>2025-05-18T10:52:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://luckfalcon.github.io/posts/"
@@ -101,7 +128,7 @@
                     hreflang="zh-cn"
                     href="https://luckfalcon.github.io/zh-cn/posts/"
                     /></url><url>
-            <loc>https://luckfalcon.github.io/zh-cn/tags/</loc><lastmod>2024-01-22T17:25:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://luckfalcon.github.io/zh-cn/tags/</loc><lastmod>2025-05-18T10:52:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://luckfalcon.github.io/tags/"

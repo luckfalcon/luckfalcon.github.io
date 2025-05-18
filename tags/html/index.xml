@@ -3,7 +3,7 @@
         <title>HTML - Tag - LuckFalcon</title>
         <link>https://luckfalcon.github.io/tags/html/</link>
         <description>HTML - Tag - LuckFalcon</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 22 Jan 2024 17:25:34 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/tags/html/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 18 May 2025 10:52:00 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/tags/html/" rel="self" type="application/rss+xml" /><item>
     <title>Basic Markdown Syntax</title>
     <link>https://luckfalcon.github.io/basic-markdown-syntax/</link>
     <pubDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</pubDate>
@@ -50,6 +50,14 @@ C++编程注意条款 拷贝构造函数与拷贝赋值运算符 拷贝构造函
     <pubDate>Mon, 22 Jan 2024 17:25:34 &#43;0800</pubDate>
     <author>Luckfalcon</author>
     <guid>https://luckfalcon.github.io/vscode-config/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Go language learning notes</title>
+    <link>https://luckfalcon.github.io/go-language/</link>
+    <pubDate>Sun, 18 May 2025 10:52:00 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/go-language/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
