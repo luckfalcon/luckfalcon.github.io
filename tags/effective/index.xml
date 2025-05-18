@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>C&#43;&#43; Effective - Tag - LuckFalcon</title>
+        <link>https://luckfalcon.github.io/tags/effective/</link>
+        <description>C&#43;&#43; Effective - Tag - LuckFalcon</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 02 Nov 2023 15:30:35 &#43;0800</lastBuildDate><atom:link href="https://luckfalcon.github.io/tags/effective/" rel="self" type="application/rss+xml" /><item>
+    <title>A sumary of more effective C&#43;&#43; </title>
+    <link>https://luckfalcon.github.io/more-effective-cpp/</link>
+    <pubDate>Thu, 02 Nov 2023 15:30:35 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/more-effective-cpp/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Effective C&#43;&#43;</title>
+    <link>https://luckfalcon.github.io/effective-cpp/</link>
+    <pubDate>Tue, 31 Oct 2023 21:57:40 &#43;0800</pubDate>
+    <author>Luckfalcon</author>
+    <guid>https://luckfalcon.github.io/effective-cpp/</guid>
+    <description><![CDATA[luckfalcon的github page
+C++编程注意条款 拷贝构造函数与拷贝赋值运算符 拷贝构造函数 : 初始化 &ndash;&gt; A(B) &ndash;&gt; 只发生在对象创建时 拷贝赋值运算符 : 同类型对象值赋值给创建对象 &ndash;&gt; A=B 值传递与引用传递 值传递 ( pass-by-value ) : 调用构造函数 引用传递 (passed-by-reference) : 不调用构造函数 C++ 包含四大次级语言 c 语言部分编程 、class 类编程、template 模板编程、STL 标准库编程。 条款2：尽量以 const，enum，inline 替换 #define #define 没有作用域概念，且不做类型检查，仅仅是变量替换 (包括变量的前后缀，表达式代入)。 1 2 3 4 #define max(a,b) f((a) &gt; (b)? (a) : (b)) int a = 5,b = 0; max(++a, b);	//a被累加2次 max(++a, b+10);	//a被累加1次 enum hack (枚举hack) 常用来初始化类内数组大小，是模板元编程的基础技术。 1 2 3 4 5 6 7 8 class Test {	static const int num = 1;//此处仅为声明而非定义 int arr[num]; }; const int num;//此处为定义,放在实现文件中而非头文件中 enum{num = 5}//可代替上 static const int 1 2 3 4 5 6 class Test { private: enum {arr_size = 10};//在编译器不支持编译期间类内static初值时(仅限整数情况) static const int arr[arr_size]; }; 小结]]></description>
+</item>
+</channel>
+</rss>

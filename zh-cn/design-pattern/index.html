@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>设计模式 - LuckFalcon</title><meta name="Description" content="Happy coding, happy life!"><meta property="og:title" content="设计模式" />
+<meta property="og:description" content="设计模式" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckfalcon.github.io/zh-cn/design-pattern/" /><meta property="og:image" content="https://luckfalcon.github.io/logo.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-21T05:14:21+08:00" />
+<meta property="article:modified_time" content="2024-02-21T05:14:21+08:00" /><meta property="og:site_name" content="LuckFalcon" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://luckfalcon.github.io/logo.png" /><meta name="twitter:title" content="设计模式"/>
+<meta name="twitter:description" content="设计模式"/>
+<meta name="application-name" content="LuckFalcon">
+<meta name="apple-mobile-web-app-title" content="LuckFalcon"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckfalcon.github.io/zh-cn/design-pattern/" /><link rel="prev" href="https://luckfalcon.github.io/zh-cn/linux-command-line-and-shell-script-programming/" /><link rel="next" href="https://luckfalcon.github.io/zh-cn/vscode-config/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "设计模式",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckfalcon.github.io\/zh-cn\/design-pattern\/"
+        },"image": ["https:\/\/luckfalcon.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "design pattern","wordcount":  12870 ,
+        "url": "https:\/\/luckfalcon.github.io\/zh-cn\/design-pattern\/","datePublished": "2024-02-21T05:14:21+08:00","dateModified": "2024-02-21T05:14:21+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/luckfalcon.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Luckfalcon"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="LuckFalcon"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LuckFalcon</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/"> 所有文章 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/categories/"> 分类 </a><a class="menu-item" href="/zh-cn/categories/documentation/"> 文档 </a><a class="menu-item" href="/zh-cn/about/"> 关于 </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/design-pattern/">English</option><option value="/zh-cn/design-pattern/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="LuckFalcon"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw' aria-hidden='true'></i></span>LuckFalcon</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/zh-cn/posts/" title="">所有文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a class="menu-item" href="/zh-cn/categories/documentation/" title="">文档</a><a class="menu-item" href="/zh-cn/about/" title="">关于</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/design-pattern/">English</option><option value="/zh-cn/design-pattern/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">设计模式</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://luckfalcon.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Luckfalcon</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/documentation/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>文档</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-21">2024-02-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 12870 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 26 分钟&nbsp;<span id="/zh-cn/design-pattern/" class="leancloud_visitors" data-flag-title="设计模式">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#uml类图">UML类图</a></li>
+    <li><a href="#策略模式">策略模式</a></li>
+    <li><a href="#单一职责原则srp">单一职责原则(SRP)</a></li>
+    <li><a href="#开放-封闭原则开-闭原则ocp">开放-封闭原则(开-闭原则，OCP)</a></li>
+    <li><a href="#依赖倒转原则">依赖倒转原则</a></li>
+    <li><a href="#里氏代换原则lsp">里氏代换原则(LSP)</a></li>
+    <li><a href="#装饰模式">装饰模式</a></li>
+    <li><a href="#代理模式">代理模式</a></li>
+    <li><a href="#工厂方法模式">工厂方法模式</a></li>
+    <li><a href="#原型模式">原型模式</a></li>
+    <li><a href="#模板方法模式">模板方法模式</a></li>
+    <li><a href="#迪米特法则lod">迪米特法则(LoD)</a></li>
+    <li><a href="#外观模式facade">外观模式(Facade)</a></li>
+    <li><a href="#建造者模式builder">建造者模式(Builder)</a></li>
+    <li><a href="#观察者模式observer">观察者模式(Observer)</a></li>
+    <li><a href="#抽象工厂方法abstract-factory">抽象工厂方法(Abstract Factory)</a></li>
+    <li><a href="#状态模式state">状态模式(State)</a></li>
+    <li><a href="#适配器模式adapter">适配器模式(Adapter)</a></li>
+    <li><a href="#备忘录模式memento">备忘录模式(Memento)</a></li>
+    <li><a href="#组合模式composite">组合模式(Composite)</a></li>
+    <li><a href="#迭代器模式iterator">迭代器模式(Iterator)</a></li>
+    <li><a href="#单例模式singleton">单例模式(Singleton)</a></li>
+    <li><a href="#合成聚合复用原则">合成/聚合复用原则</a></li>
+    <li><a href="#桥接模式bridge">桥接模式(Bridge)</a></li>
+    <li><a href="#命令模式command">命令模式(Command)</a></li>
+    <li><a href="#职责链模式chain-of-responsibility">职责链模式(Chain of Responsibility)</a></li>
+    <li><a href="#中介者模式mediator">中介者模式(Mediator)</a></li>
+    <li><a href="#享元模式flyweight">享元模式(Flyweight)</a></li>
+    <li><a href="#解释器模式interpreter">解释器模式(Interpreter)</a></li>
+    <li><a href="#访问者模式visitor">访问者模式(Visitor)</a></li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#创建型模式">创建型模式</a></li>
+        <li><a href="#结构型模式">结构型模式</a></li>
+        <li><a href="#行为型模式">行为型模式</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>设计模式</p>
+<h1 id="设计模式">设计模式</h1>
+<p>面向对象编程优点：
+可维护
+可复用
+可扩展
+灵活性好
+面向对象三大特性：封装、继承、多态降低程序的耦合度
+业务逻辑和界面逻辑分开降低两者间度耦合度</p>
+<h2 id="uml类图">UML类图</h2>
+<ul>
+<li>用一个单独的类来创造实例的过程，这个类就是简单工厂类。</li>
+</ul>
+<!-- ![UML类图](/picture/UML.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/UML.png" title="UML类图" data-thumbnail="/zh-cn/design-pattern/UML.png" data-sub-html="<h2>UML类图</h2><p>UML类图</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/UML.png"
+            data-srcset="/zh-cn/design-pattern/UML.png, /zh-cn/design-pattern/UML.png 1.5x, /zh-cn/design-pattern/UML.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/UML.png" width="690" height="702" />
+    </a><figcaption class="image-caption">UML类图</figcaption>
+    </figure></p>
+<!-- ![UML.png](https://vip.helloimg.com/i/2024/03/08/65eab75a11edc.png) -->
+<p>UML类图是一种强大的工具，可用于可视化和传达软件系统的结构和关系。</p>
+<ul>
+<li>类图分三层：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类名(抽象类用斜体)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类的特性(通常是字段和属性)</td>
+</tr>
+<tr>
+<td>类的操作(通常是方法和行为)</td>
+</tr>
+</tbody>
+</table>
+<p>注意: &lsquo;+&rsquo; 表示 pubilc, &lsquo;-&rsquo; 表示 private, &lsquo;#&rsquo; 表示 protected。</p>
+<ul>
+<li>接口图
+与类图区别在于顶端有 &laquo; interface &raquo;显示。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&laquo; interface &raquo; 接口名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">接口方法</td>
+</tr>
+</tbody>
+</table>
+<p>还有一种表示方法叫做棒棒糖表示法。</p>
+<ol>
+<li>继承关系用空三角 + 实线来表示。</li>
+<li>实现接口用空三角 + 虚线来表示。</li>
+<li>关联关系用实线箭头表示。</li>
+<li>聚合 : 表示一种弱的”拥有“关系，体现的是 A 对象可以包含 B 对象，但 B 对象不是 A 对象的一部分。空心菱形 + 实心箭头表示。</li>
+<li>合成(组合) : 是一种强的&quot;拥有&quot;关系，体现了严格的部分与整体关系，部分和整体的生命周期一样。实心菱形 + 实心箭头表示。合成关系两端各有一个基数表示该端可以有几个实例。</li>
+<li>依赖关系用虚线箭头表示。</li>
+</ol>
+<h2 id="策略模式">策略模式</h2>
+<p>它定义了一个算法家族，分别封装起来，让它们之间可以相互替换，此模式让算法的变化，不会影响到使用算法到用户。</p>
+<!-- ![策略模式结构](/picture/strategy.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/strategy.png" title="策略模式结构" data-thumbnail="/zh-cn/design-pattern/strategy.png" data-sub-html="<h2>策略模式结构</h2><p>策略模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/strategy.png"
+            data-srcset="/zh-cn/design-pattern/strategy.png, /zh-cn/design-pattern/strategy.png 1.5x, /zh-cn/design-pattern/strategy.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/strategy.png" width="575" height="389" />
+    </a><figcaption class="image-caption">策略模式结构</figcaption>
+    </figure></p>
+<!-- ![strategy.png](https://vip.helloimg.com/i/2024/03/08/65eab759ca9bf.png) -->
+<p>它允许在运行时选择算法的行为，而不是在编译时固定使用特定算法。该模式属于行为型设计模式，它通过将一组算法封装在可互换的策略对象中，以使算法的选择和使用与客户端代码解耦。
+<em><strong>策略模式到核心是实现算法的封装</strong></em></p>
+<h2 id="单一职责原则srp">单一职责原则(SRP)</h2>
+<ul>
+<li>就一个类而言，应该仅有一个引起它变化的原因。</li>
+<li>如果一个类承担的职责过多，就等于把这些职责耦合在了一起，一个职责的变化可能会削弱或抑制这个类完成其他职责的能力。这种耦合会导致脆弱的设计，当变化发生时，设计会遭到意想不到当破坏。</li>
+<li>软件设计真正要做的许多内容，就是发现职责并把那些职责相互分离。</li>
+<li>如果你能想到多于一个动机去改变一个类，那么这个类就具有多于一个职责，就应该考虑类的职责分离。</li>
+</ul>
+<h2 id="开放-封闭原则开-闭原则ocp">开放-封闭原则(开-闭原则，OCP)</h2>
+<ul>
+<li>开放-封闭原则，是说软件实体(类、模板、函数等等)应该可以扩展，但是不可修改。即，对于扩展是开放的，对于更改是封闭的。</li>
+<li>无论模块是多么&quot;封闭&quot;，都会存在一些无法对之封闭的变化。既然不可能完全封闭，设计人员必须对于他设计的模块应该对哪种变化封闭做出选择。他必须猜测出最有可能发生的变化种类(这种方式不太现实)，然后构造抽象来隔离那些变化。</li>
+<li>在我们最初编写代码时，假设变化不发生。当变化发生时，我们就创建抽象来隔离以后发生同类的变化。</li>
+<li>面对需求，对程序的改动是通过增加新代码进行的，而不是更改现有的代码。</li>
+<li>查明可能发生的变化所等待的时间越长，要创建正确的抽象就越困难。</li>
+<li>开放-封闭原则是面向对象设计的核心所在。遵循这个原则可以带来面向对象技术所声称的巨大好处，也就是可维护、可扩展、可复用、灵活性好。开发人员应该仅对程序中呈现出频繁变化的那部分做出抽象，然而，对于应用程序中的每个部分都时刻地进行抽象同样不是一个好主意。拒绝不成熟地抽象和抽象本身一样重要。</li>
+</ul>
+<h2 id="依赖倒转原则">依赖倒转原则</h2>
+<ul>
+<li>依赖倒转原则：</li>
+</ul>
+<blockquote>
+<ol>
+<li>高层模块不应该依赖低层模块。两个都应该依赖抽象。</li>
+<li>抽象不应该依赖细节。细节应该依赖抽象。</li>
+</ol>
+</blockquote>
+<ul>
+<li>抽象不应该依赖细节，细节应该依赖于抽象。即应针对接口编程，不应该对实现编程。</li>
+</ul>
+<h2 id="里氏代换原则lsp">里氏代换原则(LSP)</h2>
+<blockquote>
+<ul>
+<li>里氏代换原则:子类型必须能够替换掉它的父类型。即，在软件里面，把父类都替换称它的子类，程序行为没有变化。</li>
+<li>只有当子类可以替换掉父类，软件单位的功能不受影响时，父类才能真正被复用，而子类也能够在父类基础上增加新的行为。</li>
+</ul>
+</blockquote>
+<ul>
+<li>依赖倒转其实可以说是面向对象设计的标志，用哪些语言来编写程序不重要，如果编写时考虑的都是如何针对抽象编程而不是细节编程，即程序中所有的依赖关系都是终止于抽象类或者接口，那就是面向对象设计，反之那就是过程设计。</li>
+</ul>
+<h2 id="装饰模式">装饰模式</h2>
+<ul>
+<li><strong>装饰模式(Decorator)</strong>: 动态地给一个对象添加额外的职责，就增加功能来说，装饰模式比生成子类更灵活。</li>
+</ul>
+<!-- ![装饰模式结构](/picture/decorator.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/decorator.png" title="装饰模式结构" data-thumbnail="/zh-cn/design-pattern/decorator.png" data-sub-html="<h2>装饰模式结构</h2><p>装饰模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/decorator.png"
+            data-srcset="/zh-cn/design-pattern/decorator.png, /zh-cn/design-pattern/decorator.png 1.5x, /zh-cn/design-pattern/decorator.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/decorator.png" width="568" height="509" />
+    </a><figcaption class="image-caption">装饰模式结构</figcaption>
+    </figure></p>
+<!-- ![decorator.png](https://vip.helloimg.com/i/2024/03/08/65eabab0e4ed7.png) -->
+<ul>
+<li>装饰模式是利用 SetComponent 来对对象进行包装。</li>
+<li>每个装饰对象和如何使用这个对象分离，每个装饰对象只关心自己的功能，不需要关心如何添加到对象链当中。</li>
+<li>装饰模式，把每个要装饰到功能放在单独的类中，并让这个类包装它所要装饰的对象，因此，当需要执行特殊行为时，客户代码就可以在运行时根据需求有选择地、按顺序地使用装饰功能包装对象了。</li>
+<li>如果只有一个 ConcreteComponent 类而没有抽象的 Component 类，那么 Decorator 类可以是 ConcreteComponent 的一个子类。同样道理，如果只有一个 ConcreteDecorator 类，那么没必要建立一个单独 Decorator 类，可以把 Decorator 和 ConcreteDecorator 的责任合并为一个类。</li>
+<li>装饰模式的优点:</li>
+</ul>
+<blockquote>
+<ul>
+<li>把类中的装饰功能从类中搬移去除，这样可以简化原有的类。</li>
+<li>把核心职责和装饰功能分开来，而且可以去除相关类中重复的装饰逻辑。</li>
+</ul>
+</blockquote>
+<ul>
+<li><em><strong>装饰模式的装饰顺序很重要</strong></em>。</li>
+</ul>
+<h2 id="代理模式">代理模式</h2>
+<ul>
+<li><strong>代理模式(Proxy)</strong>，为其他对象提供一种代理以控制对这个对象的访问。</li>
+</ul>
+<!-- ![代理模式结构图](picture/proxy.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/proxy.png" title="代理模式结构" data-thumbnail="/zh-cn/design-pattern/proxy.png" data-sub-html="<h2>代理模式结构</h2><p>代理模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/proxy.png"
+            data-srcset="/zh-cn/design-pattern/proxy.png, /zh-cn/design-pattern/proxy.png 1.5x, /zh-cn/design-pattern/proxy.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/proxy.png" width="455" height="465" />
+    </a><figcaption class="image-caption">代理模式结构</figcaption>
+    </figure></p>
+<!-- ![proxy.png](https://vip.helloimg.com/i/2024/03/08/65eab759c7306.png) -->
+<ul>
+<li>代理模式应用</li>
+</ul>
+<ol>
+<li>远程代理
+为一个对象在不同的地址空间提供局部代表。这样可以隐藏一个对象存在于不同地址空间的事实。如 webservice</li>
+<li>虚拟代理
+根据需要创建开销很大的对象。通过它来存放实例化需要很长时间的真实对象。如 HTML</li>
+<li>安全代理
+用来控制真实对象访问时的权限。</li>
+<li>智能指引
+当调用真实对象时，代理处理另外一些事。</li>
+</ol>
+<ul>
+<li>代理模式就是在访问对象时引入一定程度的间接性，因为这种间接性，可以附加多种用途。</li>
+</ul>
+<h2 id="工厂方法模式">工厂方法模式</h2>
+<ul>
+<li>简单工厂 VS 工厂方法模式
+简单工厂模式最大的优点在于工厂类中包含了必要的逻辑判断，根据客户端的选择条件动态实例化相关类，对于客户端来说，去除类与具体产品的依赖。</li>
+<li><strong>工厂方法模式</strong>: 定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。</li>
+</ul>
+<!-- ![工厂方法模式结构图](picture/factory-method.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/factory-method.png" title="工厂方法模式结构" data-thumbnail="/zh-cn/design-pattern/factory-method.png" data-sub-html="<h2>工厂方法模式结构</h2><p>工厂方法模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/factory-method.png"
+            data-srcset="/zh-cn/design-pattern/factory-method.png, /zh-cn/design-pattern/factory-method.png 1.5x, /zh-cn/design-pattern/factory-method.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/factory-method.png" width="495" height="485" />
+    </a><figcaption class="image-caption">工厂方法模式结构</figcaption>
+    </figure></p>
+<!-- ![factory-method.png](https://vip.helloimg.com/i/2024/03/08/65eabae23552d.png) -->
+<h2 id="原型模式">原型模式</h2>
+<ul>
+<li>原型模式(Prototype),用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
+<strong>c++11新特性，协变返回类型</strong></li>
+</ul>
+<!-- ![原型模式结构图](picture/prototype.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/prototype.png" title="原型模式结构" data-thumbnail="/zh-cn/design-pattern/prototype.png" data-sub-html="<h2>原型模式结构</h2><p>原型模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/prototype.png"
+            data-srcset="/zh-cn/design-pattern/prototype.png, /zh-cn/design-pattern/prototype.png 1.5x, /zh-cn/design-pattern/prototype.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/prototype.png" width="505" height="433" />
+    </a><figcaption class="image-caption">原型模式结构</figcaption>
+    </figure></p>
+<!-- ![prototype.png](https://vip.helloimg.com/i/2024/03/08/65eab758b1619.png) -->
+<h2 id="模板方法模式">模板方法模式</h2>
+<ul>
+<li>当我们要完成在某一细节层次一致一个过程或一系列步骤，但其个别步骤在更详细的层次上实现可能不同时，我们通常考虑使用模板方法模式处理。</li>
+</ul>
+<p><strong>模板方法模式</strong>：定义一个操作中的算法骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法结构即可重新定义该算法到某些特定步骤。</p>
+<!-- ![模板方法模式](/picture/template-method.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/template-method.png" title="模板方法模式" data-thumbnail="/zh-cn/design-pattern/template-method.png" data-sub-html="<h2>模板方法模式</h2><p>模板方法模式</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/template-method.png"
+            data-srcset="/zh-cn/design-pattern/template-method.png, /zh-cn/design-pattern/template-method.png 1.5x, /zh-cn/design-pattern/template-method.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/template-method.png" width="427" height="344" />
+    </a><figcaption class="image-caption">模板方法模式</figcaption>
+    </figure></p>
+<!-- ![template-method.png](https://vip.helloimg.com/i/2024/03/08/65eab75b71325.png) -->
+<h2 id="迪米特法则lod">迪米特法则(LoD)</h2>
+<p>迪米特法则(LoD):</p>
+<blockquote>
+<p>如果两个类不必彼此直接通信，那么这两个类就不应当发生直接的相互作用。如果其中一个类需要调用另一个类某一个方法的话，可以通过第三者转发这个调用。</p>
+</blockquote>
+<ul>
+<li>在类的结构设计中，每一个类都应当尽量降低成员的访问权限。</li>
+<li>迪米特法则的根本思想，是强调类之间的松耦合。</li>
+<li>类之间的耦合越弱，越有利于复用，一个处于弱耦合的类被修改，不会对有关系的造成波及。</li>
+</ul>
+<h2 id="外观模式facade">外观模式(Facade)</h2>
+<p><strong>外观模式(Facade)</strong>: 为子系统中的一组接口提供一个一致的界面，此模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</p>
+<!-- ![外观模式结构图](/picture/facade.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/facade.png" title="外观模式结构" data-thumbnail="/zh-cn/design-pattern/facade.png" data-sub-html="<h2>外观模式结构</h2><p>外观模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/facade.png"
+            data-srcset="/zh-cn/design-pattern/facade.png, /zh-cn/design-pattern/facade.png 1.5x, /zh-cn/design-pattern/facade.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/facade.png" width="619" height="461" />
+    </a><figcaption class="image-caption">外观模式结构</figcaption>
+    </figure></p>
+<!-- ![facade.png](https://vip.helloimg.com/i/2024/03/08/65eabab043a21.png) -->
+<ul>
+<li>在设计初期阶段，应该要有意识的将不同的两个层分离，层与层之间建立外观 <strong>Facade</strong>。</li>
+<li>在开发阶段，子系统往往经过不断的重构演化而变得越来越复杂，增加外观 <strong>Facade</strong> 可以提供一个简单的接口，减少它们之间的依赖。</li>
+<li>在维护一个遗留的大型系统时，可能这个系统已经非常难以维护和扩展了，为新系统开发一个外观 <strong>Facade</strong> 类，来提供设计粗糙或高度复杂的遗留代码的比较清晰简单的接口，让新系统与 <strong>Facade</strong> 对象交互，<strong>Facade</strong> 与遗留代码交互所有复杂的工作。</li>
+<li><strong>外观模式</strong>体现了<strong>依赖倒置原则</strong>和<strong>迪米特法则</strong>。</li>
+</ul>
+<h2 id="建造者模式builder">建造者模式(Builder)</h2>
+<p><strong>建造者模式(Builder)</strong>: 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</p>
+<!-- ![建造者模式结构](/picture/builder.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/builder.png" title="建造者模式结构" data-thumbnail="/zh-cn/design-pattern/builder.png" data-sub-html="<h2>建造者模式结构</h2><p>建造者模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/builder.png"
+            data-srcset="/zh-cn/design-pattern/builder.png, /zh-cn/design-pattern/builder.png 1.5x, /zh-cn/design-pattern/builder.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/builder.png" width="497" height="400" />
+    </a><figcaption class="image-caption">建造者模式结构</figcaption>
+    </figure></p>
+<!-- ![builder.png](https://vip.helloimg.com/i/2024/03/08/65eabbf43dfe1.png) -->
+<ul>
+<li>建造者模式用于创建一些复杂的对象，这些对象内部构建间的建造顺序通常是稳定的，但对象内部的构建通常面临着复杂变化。</li>
+<li>建造者模式，使得建造代码与表示代码分离，由于建造者隐藏了该产品是如何组装的，所以若要改变一个产品的内部表示，只需要再定义一个建造者即可。</li>
+<li>建造者模式是在当创建复杂对象的<strong>算法</strong>应该独立于该对象的<strong>组成部分</strong>以及它们的<strong>装配方式</strong>时适用的模式。</li>
+</ul>
+<h2 id="观察者模式observer">观察者模式(Observer)</h2>
+<p><strong>观察者模式(Observer)</strong> 又叫 <strong>发布-订阅(Publish/Subscribe)模式</strong>。
+<strong>观察者模式(Observer)</strong>：定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。这个主题对象(抽象通知者)在状态发生变化时，会通知所有观察者对象，使它们能够自动更新自己。</p>
+<!-- ![观察者模式结构](/picture/observer.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/observer.png" title="观察者模式结构" data-thumbnail="/zh-cn/design-pattern/observer.png" data-sub-html="<h2>观察者模式结构</h2><p>观察者模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/observer.png"
+            data-srcset="/zh-cn/design-pattern/observer.png, /zh-cn/design-pattern/observer.png 1.5x, /zh-cn/design-pattern/observer.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/observer.png" width="485" height="553" />
+    </a><figcaption class="image-caption">观察者模式结构</figcaption>
+    </figure></p>
+<!-- ![observer.png](https://vip.helloimg.com/i/2024/03/08/65eab75a02204.png) -->
+<ul>
+<li>动机：</li>
+</ul>
+<blockquote>
+<p>将一个系统分割成一系列相互协作的类有一个很不好的副作用，那就是需要要维护相关对象的一致性。我们不希望为了维持一致性而使各类紧密耦合，这样会给维护、扩展和重用带来不便。</p>
+</blockquote>
+<ul>
+<li>应用场景：</li>
+</ul>
+<blockquote>
+<p>当一个对象改变需要同时改变其他对象，而它不知道具体有多少对象有待改变，应该使用观察者模式。</p>
+</blockquote>
+<ul>
+<li>一个抽象模型有两个方面，其中一个方面依赖于另一个方面，这时用观察者模式可以将这两者封装在独立的中使它们各自独立的改变和复用。</li>
+<li>观察者模式所做的工作其实就是在解除耦合。让耦合双方都依赖于抽象，而不是依赖于具体。从而使得各自的变化都不会影响到另一边的变化。</li>
+<li><strong>事件委托实现</strong></li>
+</ul>
+<p>事件委托产生的动机：</p>
+<blockquote>
+<p>现实中，&ldquo;抽象通知者&quot;由于不希望依赖&quot;抽象观察者&rdquo;，所以&quot;增加&quot;和&quot;减少&quot;的方法就没必要了(即抽象观察者已经不存在了)。</p>
+</blockquote>
+<ul>
+<li>委托就是一种引用方法的类型。一旦为委托分配了方法，委托将与该方法具有完全相同的行为。委托方法的使用可以像其他任何方法一样，具有参数和返回值。委托可以看作是对函数的抽象，是函数的&quot;类&quot;，委托的实例代表一个具体的函数。</li>
+<li>一个委托可以搭载多个方法，所有方法被依次唤起。它可以使委托对象所搭载的方法并不需要属于同一个类。</li>
+<li>委托对象所搭载的所有方法必须具有相同的原形和形式，也就是<strong>具有相同的参数列表和放回值类型</strong>。</li>
+</ul>
+<h2 id="抽象工厂方法abstract-factory">抽象工厂方法(Abstract Factory)</h2>
+<p><strong>抽象工厂方法(Abstract Factory)</strong>：提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。</p>
+<!-- ![抽象工厂方法结构](/picture/abstract-factory.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/abstract-factory.png" title="抽象工厂方法结构" data-thumbnail="/zh-cn/design-pattern/abstract-factory.png" data-sub-html="<h2>抽象工厂方法结构</h2><p>抽象工厂方法结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/abstract-factory.png"
+            data-srcset="/zh-cn/design-pattern/abstract-factory.png, /zh-cn/design-pattern/abstract-factory.png 1.5x, /zh-cn/design-pattern/abstract-factory.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/abstract-factory.png" width="925" height="769" />
+    </a><figcaption class="image-caption">抽象工厂方法结构</figcaption>
+    </figure></p>
+<!-- ![abstract-factory.png](https://vip.helloimg.com/i/2024/03/08/65eabbf4629f9.png) -->
+<ul>
+<li>抽象工厂的优缺点</li>
+</ul>
+<p>优点：</p>
+<blockquote>
+<p>易于交换产品系列，由于具体工厂类在一个应用中只需要在初始化的时候出现一次，这就使得改变一个应用的具体工厂变得非常容易，它只需要改变具体工厂即可使用不同的产品配置。
+它让具体的创建实现过程与客户端分离，客户端是通过它们的抽象接口操作实例，产品的具体类名也被具体工厂的实现分离，不会出现在客户代码中。</p>
+</blockquote>
+<p>缺点：</p>
+<blockquote>
+<p>如果需求来自增加功能，则需要改变的类较多。</p>
+</blockquote>
+<ul>
+<li>简单工厂改进抽象工厂</li>
+<li>用反射加抽象工厂</li>
+<li>编程方式：依赖注入(Dependency Injection)</li>
+<li>反射技术使用格式：Assembly.Load(&ldquo;程序集名称&rdquo;).CreateInstance(&ldquo;命名空间.类型名称&rdquo;)</li>
+<li>所有用简单工厂的地方，都可以考虑用反射技术来去除 switch 或 if，解除分支判断带来的耦合。</li>
+</ul>
+<h2 id="状态模式state">状态模式(State)</h2>
+<p><strong>状态模式(State)</strong>：当一个对象的内在状态改变时允许改变其行为，这个对象看起来像似改变了其类。</p>
+<ul>
+<li>状态模式主要<strong>解决</strong>的是当控制一个对象状态转换的条件表达式过于复杂时的情况。把状态的判断逻辑转移到表示不同状态的一系列类当中，可以把复杂的判断逻辑简化。</li>
+</ul>
+<!-- ![状态模式结构](/picture/state.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/state.png" title="状态模式结构" data-thumbnail="/zh-cn/design-pattern/state.png" data-sub-html="<h2>状态模式结构</h2><p>状态模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/state.png"
+            data-srcset="/zh-cn/design-pattern/state.png, /zh-cn/design-pattern/state.png 1.5x, /zh-cn/design-pattern/state.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/state.png" width="644" height="393" />
+    </a><figcaption class="image-caption">状态模式结构</figcaption>
+    </figure></p>
+<!-- ![state.png](https://vip.helloimg.com/i/2024/03/08/65eab759c6cf2.png) -->
+<p>状态模式好处：</p>
+<blockquote>
+<p>将与特定状态相关的行为局部化，并且将不同状态的行为分割开来。
+将特定的状态相关的行为都放入一个对象中，由于所有与状态相关的代码都存在某个 ConcreteState 中，所以通过定义新的子类可以很容易的增加新的状态和转换。
+消除了庞大的条件分支语句。状态模式通过把各种状态转移逻辑分布到 State 的子类中,来减少相互间的依赖。
+当一个对象的行为取决于它的状态，并且它必须在运行时刻根据状态改变它的行为时，就可以考虑使用状态模式。</p>
+</blockquote>
+<h2 id="适配器模式adapter">适配器模式(Adapter)</h2>
+<p><strong>适配器模式(Adapter)</strong>：将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</p>
+<ul>
+<li>当系统的数据和行为都正确，但接口不符合，我们应该考虑用适配器，目的是使控制范围之外的一个原有对象与某个接口匹配。</li>
+<li>适配器模式主要应用于希望复用一些现存的类，但是接口又与复用环境要求不一致的情况。</li>
+<li>适配器模式分为：类适配器模式和对象适配器模式。</li>
+</ul>
+<blockquote>
+<p>类适配器：通过多重继承对一个接口与另一个接口进行匹配。<strong>(C#、Java、VB.Net不支持多重继承,即它们要求一个类只有一个父类)</strong></p>
+</blockquote>
+<!-- ![对象适配器结构](/picture/adapter.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/adapter.png" title="对象适配器结构" data-thumbnail="/zh-cn/design-pattern/adapter.png" data-sub-html="<h2>对象适配器结构</h2><p>对象适配器结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/adapter.png"
+            data-srcset="/zh-cn/design-pattern/adapter.png, /zh-cn/design-pattern/adapter.png 1.5x, /zh-cn/design-pattern/adapter.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/adapter.png" width="536" height="336" />
+    </a><figcaption class="image-caption">对象适配器结构</figcaption>
+    </figure></p>
+<!-- ![adapter.png](https://vip.helloimg.com/i/2024/03/08/65eabbf43b1a7.png) -->
+<ul>
+<li>使用一个已经存在的类，但如果它的接口，也就是它的方法和你的要求不同时，应该考虑用适配器模式。</li>
+<li>两个类所做的事情相同或相似，但是具有不同的接口时要使用它。</li>
+<li>客户代码可以统一调用同一接口，可以更简单、更直接、更紧凑。</li>
+<li>在双方都不太容易修改的时候，再使用适配器模式适配。而不是一有不同就使用它。</li>
+</ul>
+<h2 id="备忘录模式memento">备忘录模式(Memento)</h2>
+<p><strong>备忘录模式(Memento)</strong>：在不破坏封装性的前提下，捕捉一个对象的内部状态，并在该对象之外保存这个状态。这样就可以将该对象恢复到原先保存的状态。</p>
+<!-- ![备忘录模式结构](/picture/memento.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/memento.png" title="备忘录模式结构" data-thumbnail="/zh-cn/design-pattern/memento.png" data-sub-html="<h2>备忘录模式结构</h2><p>备忘录模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/memento.png"
+            data-srcset="/zh-cn/design-pattern/memento.png, /zh-cn/design-pattern/memento.png 1.5x, /zh-cn/design-pattern/memento.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/memento.png" width="628" height="366" />
+    </a><figcaption class="image-caption">备忘录模式结构</figcaption>
+    </figure></p>
+<!-- ![memento.png](https://vip.helloimg.com/i/2024/03/08/65eab759c5b93.png) -->
+<ul>
+<li>Memento 模式比较适用于功能比较复杂的，但需要维护或记录属性历史的类，需要保存的属性只是众多属性中的一小部分时，Originator 可以根据保存的 Memento 信息还原到前一状态。</li>
+<li>如果在某个系统中使用<strong>命令模式</strong>时，需要实现命令的撤销功能，那么命令模式可以使用备忘录模式来存储可撤销操作的状态。</li>
+<li>使用备忘录可以复杂的对象内部信息对其他的对象屏蔽起来。</li>
+<li>当角色的状态改变的时候，有可能这个状态无效，这个时候就可以时候暂时保存起来的备忘录将状态复原。</li>
+</ul>
+<h2 id="组合模式composite">组合模式(Composite)</h2>
+<p><strong>组合模式(Composite)</strong>：将对象组合成树形结构以表示&quot;部分-整体&quot;的层次结构。组合模式使得用户对单个对象和组合对象的使用具有一致性。</p>
+<!-- ![组合模式结构](/picture/composite.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/composite.png" title="组合模式结构" data-thumbnail="/zh-cn/design-pattern/composite.png" data-sub-html="<h2>组合模式结构</h2><p>组合模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/composite.png"
+            data-srcset="/zh-cn/design-pattern/composite.png, /zh-cn/design-pattern/composite.png 1.5x, /zh-cn/design-pattern/composite.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/composite.png" width="570" height="464" />
+    </a><figcaption class="image-caption">组合模式结构</figcaption>
+    </figure></p>
+<!-- ![composite.png](https://vip.helloimg.com/i/2024/03/08/65eabab03dbb1.png) -->
+<ul>
+<li>透明方式与安全方式</li>
+</ul>
+<blockquote>
+<p>透明方式：在 Component 中声明所有用来管理子对象的方法，其中包括 Remove,Add 等。这样实现的 Component 接口的所有子类都具备了 Add 和 Remove。这样做的好处就是叶节点和枝节点对于外界没有区别，它们具备完全一致的行为接口。缺点，Leaf 类本身不具备 Add 和 Remove 方法的功能，实现它没有意义。
+安全方式：在 Component 中不去声明 Remove,Add 方法，那么子类 Leaf 也就不需要去实现它，而是在 Composite 声明所有用来管理子类对象的方法，由于不够透明，所以树叶和树枝类将不具备相同的接口，客户端调用需要做相应的判断，带来不便。</p>
+</blockquote>
+<ul>
+<li>需求中是体现部分与整体层次结构时，以及你希望用户可以忽略组合对象与单个对象的不同，统一地使用组合结构中的所有对象时，就应该考虑使用组合模式。</li>
+<li>组合模式包含基本对象和组合对象的类层次结构。基本对象可以被组合成更复杂的组合对象，而这个组合对象又可以被组合，这样不断的递归下去，客户代码中，任何用到基本对象的地方都可以使用组合对象。</li>
+<li>用户不需要关心到底是处理一个叶节点还是一个组合组件，也就用不着为定义组合而写一些选择判断语句了。</li>
+<li>组合模式让客户可以一致地使用组合结构和单个对象。</li>
+</ul>
+<h2 id="迭代器模式iterator">迭代器模式(Iterator)</h2>
+<p><strong>迭代器模式(Iterator)</strong>：提供一种方法顺序访问一个聚合对象中每个元素，而又不暴露该对象的内部表示。</p>
+<ul>
+<li>当你访问一个聚合对象，而且不管这些对象是什么都需要遍历的时候，你就应该考虑用迭代器模式。</li>
+<li>你需要对聚集有多种方式遍历时，可以考虑用迭代器模式。</li>
+<li>迭代器模式为遍历不同的聚集结构提供如开始、下一个、是否结束、当前哪一项等统一的接口。(c# Java等已经将该模式集成在语言内部了，<strong>foreach 算法</strong>)</li>
+</ul>
+<!-- ![迭代器模式结构](/picture/iterator.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/iterator.png" title="迭代器模式结构" data-thumbnail="/zh-cn/design-pattern/iterator.png" data-sub-html="<h2>迭代器模式结构</h2><p>迭代器模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/iterator.png"
+            data-srcset="/zh-cn/design-pattern/iterator.png, /zh-cn/design-pattern/iterator.png 1.5x, /zh-cn/design-pattern/iterator.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/iterator.png" width="590" height="446" />
+    </a><figcaption class="image-caption">迭代器模式结构</figcaption>
+    </figure></p>
+<!-- ![iterator.png](https://vip.helloimg.com/i/2024/03/08/65eabaaf2c421.png) -->
+<ul>
+<li>迭代器模式就是分离了集合对象的遍历行为，抽象出一个迭代器类来负责，这样既可以做到不暴露集合内部结构，又可让外部代码透明的访问集合内部的数据。</li>
+</ul>
+<h2 id="单例模式singleton">单例模式(Singleton)</h2>
+<p><strong>单例模式(Singleton)</strong>：保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
+<ul>
+<li>所有类都有构造方法，不编码则系统默认生成空的构造方法，若有显示定义的构造方法，默认构造方法就会消失。</li>
+<li>通常我们可以让一个全局变量使得一个对象被访问，但它不能防止你实例化多个对象。一个最好的办法就是，让类自身负责保存它的唯一实例。这个类可以保证没有其他实例可以被创建，并且它可以提供一个访问该实例的方法。</li>
+</ul>
+<!-- ![单例模式结构](/picture/singleton.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/singleton.png" title="单例模式结构" data-thumbnail="/zh-cn/design-pattern/singleton.png" data-sub-html="<h2>单例模式结构</h2><p>单例模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/singleton.png"
+            data-srcset="/zh-cn/design-pattern/singleton.png, /zh-cn/design-pattern/singleton.png 1.5x, /zh-cn/design-pattern/singleton.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/singleton.png" width="454" height="167" />
+    </a><figcaption class="image-caption">单例模式结构</figcaption>
+    </figure></p>
+<!-- ![singleton.png](https://vip.helloimg.com/i/2024/03/08/65eab758aabd3.png) -->
+<ul>
+<li>单例模式因为 Singleton 封装它的唯一实例，这样它可以严格地控制客户怎样访问它以及何时访问它。简单地说就是对唯一实例的受控访问。</li>
+<li>多线程时的单例模式，通常会加进程锁 lock，lock 是确保当一个线程位于代码的临界区时，另一个线程不进入临界区。如果其他线程试图进入锁定的代码，则它将一直等待，直到对象被释放。</li>
+<li>静态初始化的方式在自己被加载时就将自己实例化，称之为饿汉式单例类。不存在多线程安全问题。</li>
+<li>要在第一次被引用时，才会将自己实例化，称之为懒汉式单例类。存在多线程安全问题。</li>
+</ul>
+<h2 id="合成聚合复用原则">合成/聚合复用原则</h2>
+<ul>
+<li>对象的继承关系是在编译时就定义好的了，所以无法在运行时改变从父类继承的实现。子类的实现与它的父类有非常紧密的依赖关系，以至于父类实现中的任何变化必然会导致子类发生变化。当你需要复用子类时，如果继承下来的实现不适合解决新的问题，则父类必须重写或被其他更适合的类替换。这种依赖关系限制了灵活性并最终限制了复用性。
+<strong>合成/聚合复用原则(CARP)</strong>：尽量使用合成/聚合，尽量不要使用类继承。
+<strong>聚合</strong> : 表示一种弱的”拥有“关系，体现的是 A 对象可以包含 B 对象，但 B 对象不是 A 对象的一部分。
+<strong>合成</strong> : 是一种强的&quot;拥有&quot;关系，体现了严格的部分与整体关系，部分和整体的生命周期一样。</li>
+<li>优先使用对象的合成/聚合将有助于你保持每个类被封装，并被集中在单个任务上。这样类和类继承层次会保持较小规模，并且不太可能增长为不可控的庞然大物。</li>
+</ul>
+<h2 id="桥接模式bridge">桥接模式(Bridge)</h2>
+<p><strong>桥接模式(Bridge)</strong>：将抽象部分与它的实现部分分离，使它们都可以独立地变化。</p>
+<ul>
+<li>抽象与它的实现分离，不是让抽象类与其派生类分离，因为这没有意思。实现指的是抽象类和它的派生类用来实现自己的对象。</li>
+</ul>
+<!-- ![桥接模式结构](/picture/bridge.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/bridge.png" title="桥接模式结构" data-thumbnail="/zh-cn/design-pattern/bridge.png" data-sub-html="<h2>桥接模式结构</h2><p>桥接模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/bridge.png"
+            data-srcset="/zh-cn/design-pattern/bridge.png, /zh-cn/design-pattern/bridge.png 1.5x, /zh-cn/design-pattern/bridge.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/bridge.png" width="527" height="364" />
+    </a><figcaption class="image-caption">桥接模式结构</figcaption>
+    </figure></p>
+<!-- ![bridge.png](https://vip.helloimg.com/i/2024/03/08/65eabbf43fc2a.png) -->
+<ul>
+<li>实现系统可能有多角度分类，每一种分类都有可能变化，那么就把这种多角度分离出来让它们独立变化，减少它们之间的耦合。</li>
+</ul>
+<h2 id="命令模式command">命令模式(Command)</h2>
+<p><strong>命令模式(Command)</strong>：将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可撤销的操作。</p>
+<!-- ![命令模式结构](/picture/command.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/command.png" title="命令模式结构" data-thumbnail="/zh-cn/design-pattern/command.png" data-sub-html="<h2>命令模式结构</h2><p>命令模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/command.png"
+            data-srcset="/zh-cn/design-pattern/command.png, /zh-cn/design-pattern/command.png 1.5x, /zh-cn/design-pattern/command.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/command.png" width="532" height="429" />
+    </a><figcaption class="image-caption">命令模式结构</figcaption>
+    </figure></p>
+<!-- ![command.png](https://vip.helloimg.com/i/2024/03/08/65eabab038a35.png) -->
+<p>invoke:调用</p>
+<ul>
+<li>命令模式作用</li>
+</ul>
+<blockquote>
+<ol>
+<li>它能较容易地设计一个命令队列</li>
+<li>在需要的情况下，可以较容易地将命令记录日志</li>
+<li>允许接收请求的一方决定是否要否决请求</li>
+<li>可以容易地实现对请求的撤销和重做</li>
+<li>由于加进新的具体命令类不影响其他类，因此增加新的具体命令类很容易</li>
+</ol>
+<ul>
+<li>命令模式把请求一个操作的对象与知道怎么执行一个操作的对象分割开</li>
+</ul>
+</blockquote>
+<ul>
+<li>敏捷开发原则告诉我们，不要为代码添加基于猜测的、实际不需要的功能。如果不清楚一个系统是否需要命令模式，一般就不要急于去实现它，事实上，在需要的时候通过重构实现这个模式并不困难，只有在真正需要如撤销/恢复操作等功能时，把原来的代码重构为命令模式才有意义。</li>
+</ul>
+<h2 id="职责链模式chain-of-responsibility">职责链模式(Chain of Responsibility)</h2>
+<p><strong>职责链模式(Chain of Responsibility)</strong>：使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这个对象连成一条链，并沿着这条链传递请求，直到有一个对象处理它为止。</p>
+<!-- ![职责链模式结构](/picture/chain-of-responsibility.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/chain-of-responsibility.png" title="职责链模式结构" data-thumbnail="/zh-cn/design-pattern/chain-of-responsibility.png" data-sub-html="<h2>职责链模式结构</h2><p>职责链模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/chain-of-responsibility.png"
+            data-srcset="/zh-cn/design-pattern/chain-of-responsibility.png, /zh-cn/design-pattern/chain-of-responsibility.png 1.5x, /zh-cn/design-pattern/chain-of-responsibility.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/chain-of-responsibility.png" width="612" height="440" />
+    </a><figcaption class="image-caption">职责链模式结构</figcaption>
+    </figure></p>
+<!-- ![chain-of-responsibility.png](https://vip.helloimg.com/i/2024/03/08/65eabab220252.png) -->
+<ul>
+<li>职责链的好处</li>
+</ul>
+<blockquote>
+<ul>
+<li>当客户提交一个请求时，请求是沿链传递直至有一个 ConcreteHandler 对象负责处理它。</li>
+<li>接收者和发送者都没有对方的明确信息，且链中的对象自己也并不知道链的结构。结果是职责链可简化对象的相互连接，它们仅需保持一个指向其后继者的引用，而不需保持它所有的候选接收者的引用。</li>
+<li>随时地增加或修改处理一个请求的结构，增强了给对象指派职责的灵活性。</li>
+</ul>
+</blockquote>
+<ul>
+<li>一个请求极有可能到了链的末端都得不到处理，或者因为没有正确配置而得不到处理。</li>
+</ul>
+<h2 id="中介者模式mediator">中介者模式(Mediator)</h2>
+<ul>
+<li>尽管将一个系统分割成许多对象通常可以增加其可复用性，但是对象间相互连接的激增又会降低其可复用性。</li>
+<li>大量的连接使得一个对象不可能在没有其他对象的支持下工作，系统表现为一个不可分割的整体，所以，对系统的行为进行任何较大的改动就十分困难了。
+<strong>中介者模式(Mediator)</strong>：用一个中介对象来封装一系列的对象交互。中介者使对象不需要显式地相互引用，从而使其耦度松散，而且可以独立地改变它们之间的交互。中介者模式又叫调停者模式。</li>
+</ul>
+<!-- ![中介者模式结构](/picture/mediator.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/mediator.png" title="中介者模式结构" data-thumbnail="/zh-cn/design-pattern/mediator.png" data-sub-html="<h2>中介者模式结构</h2><p>中介者模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/mediator.png"
+            data-srcset="/zh-cn/design-pattern/mediator.png, /zh-cn/design-pattern/mediator.png 1.5x, /zh-cn/design-pattern/mediator.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/mediator.png" width="719" height="464" />
+    </a><figcaption class="image-caption">中介者模式结构</figcaption>
+    </figure></p>
+<!-- ![mediator.png](https://vip.helloimg.com/i/2024/03/08/65eabaaeb74d2.png) -->
+<ul>
+<li>中介者模式的优缺点</li>
+<li>优点</li>
+</ul>
+<blockquote>
+<ul>
+<li>中介者模式很容易在系统中应用，也很容易在系统中误用。当系统出现了&quot;多对多&quot;交互复杂的对象群时，不要急于使用中介者模式，而要先反思你的系统在设计上是不是合理。</li>
+<li>Mediator 的出现减少了各个 Colleague 的耦合，使得可以独立地改变和复用各个 Colleague 类和 Mediator，由于把对象如何协作进行了抽象，将中介作为一个独立的概念并将其封装在一个对象中，这样关注的对象就从对象各自本身的行为转移到它们之间的交互上来，也就是站在一个更宏观的角度去看待系统。</li>
+</ul>
+</blockquote>
+<ul>
+<li>缺点</li>
+</ul>
+<blockquote>
+<ul>
+<li>由于 ConcreteMediator 控制了集中化，于是就把交互复杂性变为了中介者复杂性，这就使得中介者会变得比任何一个 ConcreteColleague 都复杂。</li>
+</ul>
+</blockquote>
+<ul>
+<li>中介者模式一般应用于一组对象以定义良好但是复杂的方式进行通信的场合，以及想定制一个分布在多个类中的行为，而又不想生成太多的子类的场合。</li>
+</ul>
+<h2 id="享元模式flyweight">享元模式(Flyweight)</h2>
+<p><strong>享元模式(Flyweight)</strong>：运用共享技术有效地支持大量细粒度的对象。</p>
+<!-- ![享元模式结构](/picture/flyweight.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/flyweight.png" title="享元模式结构" data-thumbnail="/zh-cn/design-pattern/flyweight.png" data-sub-html="<h2>享元模式结构</h2><p>享元模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/flyweight.png"
+            data-srcset="/zh-cn/design-pattern/flyweight.png, /zh-cn/design-pattern/flyweight.png 1.5x, /zh-cn/design-pattern/flyweight.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/flyweight.png" width="816" height="490" />
+    </a><figcaption class="image-caption">享元模式结构</figcaption>
+    </figure></p>
+<!-- ![flyweight.png](https://vip.helloimg.com/i/2024/03/08/65eabab0cb41f.png) -->
+<ul>
+<li>内部状态和外部状态</li>
+</ul>
+<blockquote>
+<p>内部状态：不会外部环境改变的共享部分
+外部状态：随环境改变，不可以共享的状态。可以作为参数传入享元模式，达到内外状态协调。</p>
+</blockquote>
+<ul>
+<li>享元模式可以避免大量非常相似类的开销。在程序设计中，有时需要生成大量细粒度的类实例来表示数据。如果能发现这些实例除了几个参数外基本都是相同的，有时就能够受大幅度地减少需要实例化类的数量。如果能把那些参数移到类实例的外面，在方法调用时将它们传递进来，就可以通过共享大幅度地减少单个实例的数目。</li>
+<li>如果一个应用程序使用了大量的对象，而大量的这些对象造成了很大的存储开销时就应该考虑使用；还有就是对象的大多数状态可以外部状态，如果删除对象的外部状态，那么可以用相对较少的共享对象取代很多组对象，此时可以考虑使用享元模式。</li>
+</ul>
+<h2 id="解释器模式interpreter">解释器模式(Interpreter)</h2>
+<p><strong>解释器模式(Interpreter)</strong>：给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。</p>
+<ul>
+<li>如果一个特定类型的问题的发生的频率足够高，那么可能就值得将该问题的各个实例表述为一个简单语言中的句子。这样就可以构建一个解释器，该解释器通过解释这些句子来解决问题。</li>
+</ul>
+<!-- ![解释器模式结构](/picture/interpreter.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/interpreter.png" title="解释器模式结构" data-thumbnail="/zh-cn/design-pattern/interpreter.png" data-sub-html="<h2>解释器模式结构</h2><p>解释器模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/interpreter.png"
+            data-srcset="/zh-cn/design-pattern/interpreter.png, /zh-cn/design-pattern/interpreter.png 1.5x, /zh-cn/design-pattern/interpreter.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/interpreter.png" width="635" height="544" />
+    </a><figcaption class="image-caption">解释器模式结构</figcaption>
+    </figure></p>
+<!-- ![interpreter.png](https://vip.helloimg.com/i/2024/03/08/65eabab036237.png) -->
+<ul>
+<li>当一个语言需要解释执行，并且你可以将该语言中的句子表示为一个<strong>抽象语法树</strong>时，可使用解释器模式。</li>
+<li>解释器模式很容易地改变和扩展文法，因为该模式使用类来表示文法规则，你可使用继承来改变或扩展该文法。也比较容易容易实现文法，因为定义抽象语法树各个节点的类的实现大体相似，这些类都易于直接编写。</li>
+<li>解释器模式的不足，解释器模式为文法中的每一条规则至少定义了一个类，因此包含许多规则的文法可能难以管理和维护。建议当文法非常复杂时，使用其他的技术如<strong>语法分析程序</strong>或<strong>编译器生成器</strong>来处理。</li>
+<li><strong>AST是抽象语法树（Abstract Syntax Tree）的缩写</strong></li>
+</ul>
+<h2 id="访问者模式visitor">访问者模式(Visitor)</h2>
+<ul>
+<li><strong>双分派</strong>，意味着得到执行的操作取决于请求的种类和两个接收者的类型。
+<strong>访问者模式(Visitor)</strong>：表示一个作用于某对象结构中的各个元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。</li>
+</ul>
+<!-- ![访问者模式结构](/picture/visitor.png) -->
+<p><figure><a class="lightgallery" href="/zh-cn/design-pattern/visitor.png" title="访问者模式结构" data-thumbnail="/zh-cn/design-pattern/visitor.png" data-sub-html="<h2>访问者模式结构</h2><p>访问者模式结构</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/zh-cn/design-pattern/visitor.png"
+            data-srcset="/zh-cn/design-pattern/visitor.png, /zh-cn/design-pattern/visitor.png 1.5x, /zh-cn/design-pattern/visitor.png 2x"
+            data-sizes="auto"
+            alt="/zh-cn/design-pattern/visitor.png" width="831" height="803" />
+    </a><figcaption class="image-caption">访问者模式结构</figcaption>
+    </figure></p>
+<!-- ![visitor.png](https://vip.helloimg.com/i/2024/03/08/65eab75a1d1d0.png) -->
+<ul>
+<li>访问者模式适合数据结构相对稳定的系统。它把数据结构和作用于数据结构的操作之间的耦合解脱开，使得操作集合可以相对自由地演化。</li>
+<li>访问者模式的<strong>目的</strong>是要把处理从数据结构中分离出来。有比较稳定的数据结构，又有易于变化的算法，使用访问者模式是比较适合的，因为访问者模式使得算法操作的增加变得容易。</li>
+<li>访问者模式的优点就是增加新的操作很容易，因为增加新的操作就意味着增加一个新的访问者。访问者模式将有关的行为集中到一个访问者对象中。</li>
+<li>访问者模式的缺点其实就是使增加新的数据结构变得困难了。</li>
+</ul>
+<h2 id="总结">总结</h2>
+<h3 id="创建型模式">创建型模式</h3>
+<ol>
+<li>抽象工厂模式</li>
+<li>建造者模式</li>
+<li>工厂方法模式</li>
+<li>原型模式</li>
+<li>单例模式</li>
+</ol>
+<ul>
+<li><strong>创建型模式</strong>隐藏了这些类的实例是如何被创建和放在一起，整个系统关于这些对象所知道的是由抽象类所定义的接口。这样，创建型模式在创建了什么、谁创建它、它是怎么被创建的，以及何时创建这些方面提供了很大的灵活性。</li>
+<li>原型模式</li>
+</ul>
+<blockquote>
+<p>建立相应数目的原型并克隆它们通常比每次用合适的状态手工实例化该类更方便一些。</p>
+</blockquote>
+<ul>
+<li>建造者模式</li>
+</ul>
+<blockquote>
+<p>将一个复杂对象的构建与它的表示分离，用同样的构建过程创建不同的产品给客户。</p>
+</blockquote>
+<ul>
+<li><strong>内聚性</strong>描述的是一个例程内部组成部分之间相互联系的紧密程度。</li>
+<li><strong>耦合性</strong>描述的是一个例程与其他例程之间联系的紧密度。</li>
+<li>软件开发的目标应该是创建这样的例程：内部完整，也就是高内聚，而与其他例程之间的联系则是小巧、直接、可见、灵活的，这就是松耦合。</li>
+<li>单例模式</li>
+</ul>
+<blockquote>
+<p>对一些类来说，一个实例很重要。
+让类自身负责保存它的唯一实例。
+这个类可以保证没有其他实例可以被创建，并且还提供了一个访问该实例的方法。
+对唯一的实例可以严格地控制客户怎样以及何时访问它。</p>
+</blockquote>
+<ul>
+<li>工厂方法模式</li>
+</ul>
+<blockquote>
+<p>通常设计应该是从工厂方法开始，当设计者发现需要更大的灵活性时，设计便会向其他创建型模式演化。当设计者在设计标准之间进行权衡的时候，了解多个创建型模式可以给设计者更多的选择余地。</p>
+</blockquote>
+<ul>
+<li>创建型模式存在的意义：</li>
+</ul>
+<blockquote>
+<p><strong>创建型模式</strong>抽象了实例化的过程。它们帮助一个系统独立于如何创建、组合和表示它的那些对象。创建型模式都会将关于该系统如何使用哪些具体的类的信息封装起来。允许客户用结构和功能差别很大的&quot;产品&quot;对象配置一个系统。配置可以是静态的，即在编译时指定，也可以是动态的，即运行时再指定。</p>
+</blockquote>
+<ul>
+<li>从 new 角度讲工厂方法是最好的设计，它把工厂职责都分了类，其他的创建型模式都是它的变体。</li>
+</ul>
+<h3 id="结构型模式">结构型模式</h3>
+<ol>
+<li>适配器模式</li>
+<li>桥接模式  解耦方式，用聚合代替继承</li>
+<li>组合模式</li>
+<li>装饰模式</li>
+<li>外观模式</li>
+<li>享元模式</li>
+<li>代理模式</li>
+</ol>
+<ul>
+<li>适配器模式</li>
+</ul>
+<blockquote>
+<p>想使用一个已经存在的类，而它的接口不符合要求，或者希望创建一个可以复合的类，该类可以与其他不相关的类或不可预见的类协同工作。
+让这些接口不同的类通过适配器后，协同工作。</p>
+</blockquote>
+<ul>
+<li>桥接模式</li>
+</ul>
+<blockquote>
+<p>解耦两个或者多个不同方向的变化，通过对象组合的方式，把两个角色之间的继承关系改变为了组合关系，从而使这两者可以应对各自独立的变化。
+找出变化并封装之。</p>
+</blockquote>
+<ul>
+<li>装饰模式</li>
+</ul>
+<blockquote>
+<p>以动态、透明的方式给单个对象添加职责。</p>
+</blockquote>
+<ul>
+<li>组合模式</li>
+</ul>
+<blockquote>
+<p>客户可以一致地使用组合结构和单个对象。
+任何用到基本对象的地方都可以使用组合对象。</p>
+</blockquote>
+<ul>
+<li>外观模式</li>
+</ul>
+<blockquote>
+<p>应该让一个软件中的子系统间的通信和相互依赖关系达到最小，而具体的办法就是引入一个外观对象，它为子系统间提供了一个单一而简单的屏障。</p>
+</blockquote>
+<ul>
+<li>享元模式</li>
+</ul>
+<blockquote>
+<p>对象使得内存占用过多，而如果都是大量重复的对象，那就是资源的极大浪费。</p>
+</blockquote>
+<ul>
+<li>代理模式</li>
+</ul>
+<blockquote>
+<p>代理和外观的主要区别在于，代理对象代表一个单一的对象而外观对象代表一个子系统，代理的客户对象无法直接访问目标对象，由于代理提供对单独的目标对象的访问控制，而外观的客户对象可以直接访问子系统中的各个对象，但通常由外观对象提供对子系统各元件功能的简化的共同层次的调用接口。
+代理一种原来对象的代表，其他需要与这个对象打交道的操作都是和这个代表交涉。而适配器则不需要虚构出一个代表者，只需要为应付特定使用目的，将原来的类进行一些组合。</p>
+</blockquote>
+<ul>
+<li>适配器模式</li>
+</ul>
+<blockquote>
+<p>主要为解决两个已有接口之间不匹配的问题，不需要考虑这些接口是怎么实现的，不考虑它们各自可能如何演化。
+适配器这种方式不需要对两个独立设计的类中任何一个进行重新设计，就能够使它们协同工作。</p>
+</blockquote>
+<ul>
+<li>外观模式较好。</li>
+</ul>
+<h3 id="行为型模式">行为型模式</h3>
+<ol>
+<li>观察者模式</li>
+<li>模板方法模式</li>
+<li>命令模式</li>
+<li>状态模式</li>
+<li>职责链模式</li>
+<li>解释器模式</li>
+<li>中介者模式</li>
+<li>访问者模式</li>
+<li>策略模式</li>
+<li>备忘录模式</li>
+<li>迭代器模式</li>
+</ol>
+<ul>
+<li>模板方法</li>
+</ul>
+<blockquote>
+<p>代码重复是编程中最常见、最糟糕的&quot;坏味道&quot;，如果我们在一个以上的地方看到相同的程序结构，那么可以肯定，设法将它们合而为一，程序会变得更好。完全相同的代码当然存在明显的重复，而微妙的重复会出现在表面不同但是本质相同的结构或处理步骤中。
+模板方法模式由一个抽象类组成，这个抽象类定义了需要覆盖的可能有不同实现的模板方法，每个从这个抽象类派生的具体类将为此模板实现新方法。</p>
+</blockquote>
+<ul>
+<li>命令模式</li>
+</ul>
+<blockquote>
+<p>将调用操作的对象与知道如何实现操作的对象解耦，在不同的时刻指定、排列和执行请求。
+支持取消/重做的操作，并可记录整个操作日志，支持事物。</p>
+</blockquote>
+<ul>
+<li>职责链模式</li>
+</ul>
+<blockquote>
+<p>有多个对象可以处理一个请求，哪个对象处理请求事先并不知道，要在运行时刻自动确定，让客户在不明确指定接收者的情况下，提交一个请求，然后由所有能处理这个请求的对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理它为止。</p>
+</blockquote>
+<ul>
+<li>状态模式</li>
+</ul>
+<blockquote>
+<p>状态模式提供了一个更好的办法来组织与特定状态相关的代码，决定状态转移的逻辑不在单块的 if 或 switch中，而是分布在各个状态子类之间，由于所有与状态相关的代码都存在于某个状态子类中，所以通过定义新的子类就可以很容易的增加新的状态和转换。</p>
+</blockquote>
+<ul>
+<li>解释器模式</li>
+</ul>
+<blockquote>
+<p>如果一个特定类型的问题发生的频率足够高，那么就可以考虑将该问题的各个实例表述为一个简单语言中的句子。也就是说，通过构建一个解释器，该解释器解释这些句子来解决该问题。</p>
+</blockquote>
+<ul>
+<li>中介者模式</li>
+</ul>
+<blockquote>
+<p>面向对设计鼓励将行为分布到各个对象中，这种分布肯能会导致对象之间有许多连接。也就是说，有可能一个对象都需要知道其他许多对象。对象间的大量相互连接使得一个对象似乎不太可能在没有其他对象的支持下工作，这对于应对变化是不利的，任何较大的改动都很困难。将集体行为封装一个单独的中介者对象可以避免这个问题，中介者负责控制和协调一组对象间的交互。中介者充当一个中介以使组内的对象不再相互显式引用。这些对象仅知道中介者，从而减少了相互连接的数目。</p>
+</blockquote>
+<ul>
+<li>访问者模式</li>
+</ul>
+<blockquote>
+<p>访问者增加具体的 Element 是困难的，但增加依赖于复杂对象结构的构件的操作就变得容易。仅需要增加一个新的访问者即可在一个对象结构上定义一个新的操作。</p>
+</blockquote>
+<ul>
+<li>策略模式</li>
+</ul>
+<blockquote>
+<p>继承提供了一种支持多种算法或行为的方法，我们可以直接生成一个类 A 的子类 B、C、D，从而给它们以不同的行为。但这样会将行为硬行编制到父类 A 当中，而将算法的实现与类 A 的实现混合起来，从而使得类 A 难以理解、难以维护、难以扩展，而且还不能动态地改变算法。仔细分析发现，它们之间唯一的差别是它们所使用的算法或行为，将算法封装在独立的策略类中使得你可以独立于其类 A 改变它，使它易于切换、易于理解、易于扩展。</p>
+</blockquote>
+<ul>
+<li>备忘录模式</li>
+</ul>
+<blockquote>
+<p>使用备忘录可以避免暴露一些只应由对象 A 管理却又必须存储在对象 A 之外的信息。
+备忘录模式把可能很复杂的对象 A 的内部信息对其他对象屏蔽起来，从而保持了封装边界。</p>
+</blockquote>
+<ul>
+<li>迭代器模式</li>
+</ul>
+<blockquote>
+<p>迭代器模式的关键思想是将对列表的访问和遍历从列表对象中分离出来并放入一个迭代器对象中，迭代器类定义了一个访问该列表元素的接口。迭代器对象负责跟踪当前的元素，并且知道哪些元素已经遍历过了。</p>
+</blockquote>
+<ul>
+<li>只要是在做面向对象的开发，创建对象的工作不可避免。创建对象时，负责创建的实体通常需要了解要创建的是哪个具体的对象，以及何时创建这个而非那个对象的规则。而我们如果遵循开放-封闭原则、依赖倒置原则和里氏代换原则，那使用对象时，就不应该知道所用的是哪个特定的对象。此时就需要&quot;对象管理者&quot;工厂来负责此事。</li>
+<li>在创建对象时，使用抽象工厂、原型、建造者的设计比使用工厂方法要更灵活，但它们也更复杂，通常，设计是以使用工厂方法开始，当设计者发现需要更大的灵活性时，设计便会向其他创建型模式演化。</li>
+<li>工厂方法的实现并不能减少工作量，但是它能够在处理新情况时，避免使已经很复杂的代码更加复杂。</li>
+<li>面向对象设计模式体现的就是抽象的思想，类是对对象的抽象，抽象类是类的抽象，接口是对行为的抽象。</li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-02-21</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/zh-cn/design-pattern/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://luckfalcon.github.io/zh-cn/design-pattern/" data-title="设计模式" data-hashtags="design pattern"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://luckfalcon.github.io/zh-cn/design-pattern/" data-hashtag="design pattern"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://luckfalcon.github.io/zh-cn/design-pattern/" data-title="设计模式"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://luckfalcon.github.io/zh-cn/design-pattern/" data-title="设计模式"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://luckfalcon.github.io/zh-cn/design-pattern/" data-title="设计模式" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/design-pattern/">设计模式</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/linux-command-line-and-shell-script-programming/" class="prev" rel="prev" title="Linux Command Line And Shell Script Programming"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Linux Command Line And Shell Script Programming</a>
+            <a href="/zh-cn/vscode-config/" class="next" rel="next" title="Vscode运行配置">Vscode运行配置<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.121.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank">LuckFalcon</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
