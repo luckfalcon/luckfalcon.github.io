@@ -82,7 +82,7 @@ mingw32-make.exe              #生成可执行文件
         },
         {
             "label": "Build",
-       "dependsOrder": "sequence",//按列出的顺序执行任务P
+       "dependsOrder": "sequence",  #按列出的顺序执行任务P
        "dependsOn":[
         "cmake",
         "make"
@@ -90,4 +90,17 @@ mingw32-make.exe              #生成可执行文件
         }
     ]
 }
+```
+## VScode task.json 
+```bash
+${workspaceFolder}          #表示当前 workspace 文件夹路径, 也即/home/Demo/Test
+${workspaceRootFolderName}  #表示workspace的文件夹名, 也即Test
+${file}                     #文件自身的绝对路径, 也即/home/Demo/Test/.vscode/tasks.json
+${relativeFile}             #文件在workspace中的路径, 也即.vscode/tasks.ison
+${fileBasenameNoExtension}  #当前文件的文件名, 不带后缀, 也即tasks
+${fileBasename}             #当前文件的文件名, tasks.json
+${fileDirname}              #文件所在的文件夹路径, 也即/home/Demo/Test/.vscode
+${fileExtname}              #当前文件的后缀，也即.json
+${lineNumber}               #当前文件光标所在的行号
+${envPATH}                  #系统中的环境变量
 ```
