@@ -2,8 +2,9 @@
 
 
 <!--more-->
-## Ubuntu(Linux) /Windows 配置
-- Linux 下编译运行命令
+## Ubuntu(Linux) /Windows 配置Vscode的Cmake环境
+### 命令编译
+1. Linux 下编译运行命令
 ```bash
 #切换至构建目录并编译文件
 cd build
@@ -12,13 +13,15 @@ make
 #运行
 ./demo  #可执行文件名
 ```
-- Windows 下编译运行命令
+2. Windows 下编译运行命令
 ```bash
 cd build
 cmake -G "MinGW Makefiles" .. #指定生成编译文件类型为makefile，否则会调用vs编译成vs文件
 mingw32-make.exe              #生成可执行文件
 ```
-- launch.json
+### Vscode环境编译
+
+- `launch.json` 文件配置
 ```bash
 {
     "configurations": [
@@ -51,7 +54,7 @@ mingw32-make.exe              #生成可执行文件
     ]
 }
 ```
-- tasks.json
+- `tasks.json`文件配置
 ```bash
 {
 
@@ -65,7 +68,10 @@ mingw32-make.exe              #生成可执行文件
             "label": "cmake",
             "command": "cmake",
             "args": [
-                ".."      #cmake 工程路径
+                ".."      #cmake 工程路径,即顶层CmakeList.txt文件所在路径
+                #如果是windows下配置cmake,需要在".."前增加两个参数用于指定生成makefile而不是msvc,即
+                # "-G",
+                # "MinGW Makefiles",
             ]
         },
         {
@@ -91,7 +97,7 @@ mingw32-make.exe              #生成可执行文件
     ]
 }
 ```
-## VScode task.json 
+## VScode `task.json` 部分环境变量说明
 ```bash
 ${workspaceFolder}          #表示当前 workspace 文件夹路径, 也即/home/Demo/Test
 ${workspaceRootFolderName}  #表示workspace的文件夹名, 也即Test
